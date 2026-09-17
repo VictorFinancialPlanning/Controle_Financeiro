@@ -24,7 +24,11 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
 ::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-track{background:var(--bg1)}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+
+/* ── LAYOUT ── */
 .app{max-width:1400px;margin:0 auto;padding:14px 18px;padding-bottom:max(40px,env(safe-area-inset-bottom))}
+
+/* ── HEADER ── */
 .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand-icon{width:38px;height:38px;background:linear-gradient(135deg,#1d4ed8,#3b82f6);border-radius:10px;display:grid;place-items:center;flex-shrink:0;box-shadow:0 0 16px rgba(59,130,246,.35)}
@@ -35,18 +39,35 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
 .badge{padding:4px 11px;border-radius:20px;font-size:11px;font-weight:600}
 .b-blue{background:var(--blue-s);border:1px solid var(--blue-g);color:var(--blue)}
 .b-gray{background:var(--bg2);border:1px solid var(--border);color:var(--text2)}
-.tabs{display:flex;gap:3px;background:var(--bg1);border:1px solid var(--border);border-radius:11px;padding:3px;margin-bottom:16px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* ── TABS ── */
+.tabs{display:flex;gap:3px;background:var(--bg1);border:1px solid var(--border);border-radius:11px;padding:3px;margin-bottom:10px;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .tabs::-webkit-scrollbar{display:none}
 .tab{display:flex;align-items:center;gap:6px;padding:9px 13px;min-height:42px;border-radius:8px;cursor:pointer;border:none;background:transparent;color:var(--text2);font-family:var(--sans);font-size:12px;font-weight:500;white-space:nowrap;-webkit-tap-highlight-color:transparent;touch-action:manipulation;flex-shrink:0;transition:background .15s,color .15s}
 .tab svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .tab.active{background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(37,99,235,.4)}
+
+/* ── MONTH FILTER ── */
+.month-bar{display:flex;gap:5px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:8px 2px;margin-bottom:16px;border-bottom:1px solid var(--border)}
+.month-bar::-webkit-scrollbar{display:none}
+.month-pill{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--bg2);color:var(--text2);white-space:nowrap;flex-shrink:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:all .15s;min-height:30px}
+.month-pill:hover{border-color:var(--blue-g);color:var(--blue)}
+.month-pill.active{background:var(--blue-s);border-color:var(--blue-g);color:var(--blue);font-weight:700}
+.month-pill.all{background:var(--bg3);border-color:var(--border2);color:var(--text1);font-weight:700}
+.month-pill.all.active{background:rgba(99,102,241,.15);border-color:#6366f1;color:#818cf8}
+
+/* ── SECTION ── */
 .section{display:none}
 .section.active{display:block;animation:fi .22s ease}
 @keyframes fi{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── GRIDS ── */
 .g2{display:grid;gap:12px;grid-template-columns:1fr 1fr}
 .g3{display:grid;gap:12px;grid-template-columns:1fr 1fr 1fr}
 .g4{display:grid;gap:12px;grid-template-columns:repeat(4,1fr)}
 .mb12{margin-bottom:12px}
+
+/* ── CARD ── */
 .card{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:16px;position:relative;overflow:hidden}
 .card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,130,246,.04),transparent 60%);pointer-events:none}
 .cl{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;margin-bottom:7px}
@@ -54,11 +75,18 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
 .cs{font-size:11px;color:var(--text2);margin-top:4px}
 .ci{position:absolute;top:13px;right:13px;width:32px;height:32px;border-radius:8px;display:grid;place-items:center}
 .ci svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.ci-b{background:var(--blue-s);color:var(--blue)}.ci-g{background:var(--green-s);color:var(--green)}
-.ci-a{background:var(--amber-s);color:var(--amber)}.ci-r{background:var(--red-s);color:var(--red)}
+.ci-b{background:var(--blue-s);color:var(--blue)}
+.ci-g{background:var(--green-s);color:var(--green)}
+.ci-a{background:var(--amber-s);color:var(--amber)}
+.ci-r{background:var(--red-s);color:var(--red)}
+.ci-v{background:rgba(139,92,246,.12);color:var(--violet)}
+
+/* ── SECTION HEADER ── */
 .sh{font-size:10px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.7px;margin-bottom:9px;display:flex;align-items:center;gap:6px}
 .sh::before{content:'';width:3px;height:12px;background:var(--blue);border-radius:2px;flex-shrink:0}
 .hr{height:1px;background:var(--border);margin:13px 0}
+
+/* ── STATUS PILLS ── */
 .sem{display:flex;align-items:center;gap:6px;padding:7px 11px;border-radius:8px;font-size:11px;font-weight:600}
 .sg{background:var(--green-s);border:1px solid rgba(16,185,129,.25);color:var(--green)}
 .sy{background:var(--amber-s);border:1px solid rgba(245,158,11,.25);color:var(--amber)}
@@ -68,10 +96,17 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
 .sdg{background:var(--green);box-shadow:0 0 5px var(--green)}
 .sdr{background:var(--red);box-shadow:0 0 5px var(--red)}
 .sdy{background:var(--amber);box-shadow:0 0 5px var(--amber)}
+
+/* ── PROGRESS ── */
 .po{background:var(--bg3);border-radius:5px;overflow:hidden}
 .pi{height:100%;border-radius:5px;transition:width .6s ease}
-.cw{position:relative;width:100%}.cw canvas{display:block;width:100% !important}
+
+/* ── CHARTS ── */
+.cw{position:relative;width:100%}
+.cw canvas{display:block;width:100% !important}
 .ch180{height:180px}.ch220{height:220px}.ch260{height:260px}.ch300{height:300px}.ch320{height:320px}
+
+/* ── DONUT ── */
 .dw{position:relative;width:220px;height:220px;margin:0 auto}
 .dc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none}
 .dcv{font-size:18px;font-weight:800;color:var(--text1);line-height:1}
@@ -79,6 +114,8 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
 .leg{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px;justify-content:center}
 .li{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--text2)}
 .ld{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+
+/* ── TABLE ── */
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:7px}
 .tbl{width:100%;border-collapse:collapse;font-size:11px;min-width:360px}
 .tbl th{padding:7px 9px;text-align:left;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.5px;font-size:9px;border-bottom:1px solid var(--border);white-space:nowrap}
@@ -88,37 +125,62 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
 .vp{color:var(--green);font-family:var(--mono);font-weight:500}
 .vn{color:var(--red);font-family:var(--mono);font-weight:500}
 .vb{color:var(--blue);font-family:var(--mono);font-weight:500}
-.drill-row{cursor:pointer}.drill-row td:first-child::after{content:' ›';color:var(--blue);font-weight:700}
+.drill-row{cursor:pointer}
+.drill-row td:first-child::after{content:' ›';color:var(--blue);font-weight:700}
 .drill-hint{font-size:10px;color:var(--text3);text-align:right;margin-bottom:5px;font-style:italic}
+
+/* ── PILLS ── */
 .pill{display:inline-flex;padding:2px 6px;border-radius:20px;font-size:9px;font-weight:700}
-.pb{background:rgba(99,102,241,.15);color:#818cf8}.pc{background:var(--amber-s);color:var(--amber)}.pl{background:var(--red-s);color:var(--red)}
+.pb{background:rgba(99,102,241,.15);color:#818cf8}
+.pc{background:var(--amber-s);color:var(--amber)}
+.pl{background:var(--red-s);color:var(--red)}
 .delta{display:inline-flex;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:600}
-.du{background:var(--green-s);color:var(--green)}.dd{background:var(--red-s);color:var(--red)}.dn{background:var(--amber-s);color:var(--amber)}
+.du{background:var(--green-s);color:var(--green)}
+.dd{background:var(--red-s);color:var(--red)}
+.dn{background:var(--amber-s);color:var(--amber)}
+
+/* ── PATRIMÔNIO ROWS ── */
 .pr{display:flex;flex-direction:column;gap:5px;padding:11px 13px;border-radius:10px;border:1px solid var(--border);background:var(--card2);cursor:pointer;transition:all .15s}
 .pr:hover{background:var(--bg3);border-color:var(--blue-g);box-shadow:0 0 0 1px var(--blue-g)}
 .pt{display:flex;justify-content:space-between;align-items:center}
-.pc2{font-size:12px;font-weight:500}.pt2{font-size:10px;color:var(--text3);margin-top:1px}
+.pc2{font-size:12px;font-weight:500}
+.pt2{font-size:10px;color:var(--text3);margin-top:1px}
+
+/* ── META ── */
 .mc{background:var(--card2);border:1px solid var(--border);border-radius:13px;padding:16px}
 .mh{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
 .mt2{font-size:13px;font-weight:700}
 .mb2{font-size:9px;padding:3px 8px;border-radius:20px;font-weight:700}
-.mb-c{background:rgba(6,182,212,.15);color:var(--cyan)}.mb-m{background:var(--blue-s);color:var(--blue)}.mb-l{background:rgba(139,92,246,.15);color:var(--violet)}
+.mb-c{background:rgba(6,182,212,.15);color:var(--cyan)}
+.mb-m{background:var(--blue-s);color:var(--blue)}
+.mb-l{background:rgba(139,92,246,.15);color:var(--violet)}
 .mv{display:flex;justify-content:space-between;gap:7px;margin-bottom:9px}
 .mi{flex:1;text-align:center;padding:8px 4px;background:var(--bg3);border-radius:7px}
 .ml{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px}
 .mv2{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
 .mpct{font-size:26px;font-weight:800;text-align:center;margin:7px 0 5px;font-variant-numeric:tabular-nums}
+
+/* ── ENQD ── */
 .eq{border-radius:9px;padding:12px 14px;border-left:4px solid}
-.eq-r{background:var(--red-s);border-color:var(--red)}.eq-g{background:var(--green-s);border-color:var(--green)}
-.et{font-size:13px;font-weight:700;margin-bottom:3px}.es{font-size:11px;color:var(--text2);line-height:1.55}
+.eq-r{background:var(--red-s);border-color:var(--red)}
+.eq-g{background:var(--green-s);border-color:var(--green)}
+.et{font-size:13px;font-weight:700;margin-bottom:3px}
+.es{font-size:11px;color:var(--text2);line-height:1.55}
+
+/* ── SCORE ── */
 .scr{display:flex;align-items:center;gap:8px;padding:11px;background:var(--bg3);border-radius:9px;border:1px solid var(--border)}
 .sb{flex:1;text-align:center;padding:9px;background:var(--card);border-radius:7px}
-.sn{font-size:24px;font-weight:800;line-height:1}.sl{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.sn{font-size:24px;font-weight:800;line-height:1}
+.sl{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
 .sg2{flex:1;text-align:center;padding:9px;border-radius:7px;border:1px solid var(--border);background:var(--green-s)}
 .sa{font-size:16px;color:var(--text3)}
+
+/* ── GAUGE ── */
 .gw{display:flex;flex-direction:column;align-items:center}
 .gv{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums;margin-top:-6px}
 .gl{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+
+/* ── MODAL ── */
 .ov{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:1000;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
 .ov.open{opacity:1;pointer-events:all}
 .mb3{background:var(--bg1);border:1px solid var(--border2);border-radius:18px 18px 0 0;width:100%;max-width:700px;max-height:88vh;display:flex;flex-direction:column;transform:translateY(30px);transition:transform .22s ease;overflow:hidden;padding-bottom:env(safe-area-inset-bottom)}
@@ -127,7 +189,8 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
 .mhd{padding:14px 18px 11px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
 .mcat{display:flex;align-items:center;gap:9px}
 .mdot{width:11px;height:11px;border-radius:3px;flex-shrink:0}
-.mttl{font-size:15px;font-weight:800}.msub{font-size:11px;color:var(--text2);margin-top:1px}
+.mttl{font-size:15px;font-weight:800}
+.msub{font-size:11px;color:var(--text2);margin-top:1px}
 .mcls{width:30px;height:30px;border-radius:7px;background:var(--bg3);border:1px solid var(--border);display:grid;place-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;flex-shrink:0}
 .mcls svg{width:13px;height:13px;stroke:var(--text2);fill:none;stroke-width:2.5;stroke-linecap:round}
 .mbdy{overflow-y:auto;-webkit-overflow-scrolling:touch;flex:1;padding:14px 18px 18px}
@@ -143,25 +206,38 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
 .ddb{height:100%;border-radius:4px}
 .ddp{font-size:9px;color:var(--text3);margin-top:2px}
 .ddgrp{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:5px 0 2px;margin-top:5px}
+
+/* ── RESPONSIVE ── */
 @media(max-width:1100px){.g4{grid-template-columns:1fr 1fr}}
-@media(max-width:900px){.g3{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}.g4{grid-template-columns:1fr 1fr}.app{padding:10px 13px}.card{padding:13px}.cv{font-size:20px}.ch320{height:240px}.ch300{height:220px}.ch260{height:200px}}
-@media(max-width:640px){.g4,.g3,.g2{grid-template-columns:1fr}.tab svg{display:none}.tab{padding:9px 10px;font-size:11px}.dw{width:190px;height:190px}.brand-title{font-size:15px}.ch320{height:200px}}
+@media(max-width:900px){
+  .g3{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}.g4{grid-template-columns:1fr 1fr}
+  .app{padding:10px 13px}.card{padding:13px}.cv{font-size:20px}
+  .ch320{height:240px}.ch300{height:220px}.ch260{height:200px}
+}
+@media(max-width:640px){
+  .g4,.g3,.g2{grid-template-columns:1fr}
+  .tab svg{display:none}.tab{padding:9px 10px;font-size:11px}
+  .dw{width:190px;height:190px}.brand-title{font-size:15px}
+  .ch320{height:200px}.month-pill{padding:4px 9px;font-size:10px}
+}
 </style>
 </head>
 <body>
 <div class="app">
 
+<!-- HEADER -->
 <header class="header">
   <div class="brand">
     <div class="brand-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-    <div><div class="brand-title">Controle Financeiro</div><div class="brand-sub">Robson Rondini · Dashboard Pessoal</div></div>
+    <div><div class="brand-title">Controle Financeiro</div><div class="brand-sub">Robson Rondini · Dashboard 2026</div></div>
   </div>
   <div class="hbadge">
-    <span class="badge b-blue">Abril 2026</span>
-    <span class="badge b-gray">Atualizado 27/04/2026</span>
+    <span class="badge b-blue" id="hdr-mes">2026 · 5 meses</span>
+    <span class="badge b-gray">Atualizado Agosto/2026</span>
   </div>
 </header>
 
+<!-- TABS -->
 <nav class="tabs">
   <button class="tab active" data-tab="fluxo"><svg viewBox="0 0 24 24"><polyline points="3 3 3 21 21 21"/><polyline points="7 14 11 10 15 14 21 8"/></svg>Fluxo de Caixa</button>
   <button class="tab" data-tab="balanca"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Balança Patrimonial</button>
@@ -169,14 +245,25 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
   <button class="tab" data-tab="metas"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>Metas Financeiras</button>
 </nav>
 
-<!-- ══ FLUXO ══ -->
+<!-- MONTH FILTER BAR -->
+<div class="month-bar" id="month-bar">
+  <button class="month-pill all" data-month="Todos">Todos</button>
+  <button class="month-pill" data-month="Abril">Abr</button>
+  <button class="month-pill" data-month="Maio">Mai</button>
+  <button class="month-pill" data-month="Junho">Jun</button>
+  <button class="month-pill" data-month="Julho">Jul</button>
+  <button class="month-pill active" data-month="Agosto">Ago</button>
+</div>
+
+<!-- ══ TAB 1: FLUXO DE CAIXA ══ -->
 <section id="fluxo" class="section active">
   <div class="g4 mb12">
-    <div class="card"><div class="ci ci-b"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="cl">Receita · Abril</div><div class="cv" id="kpi-rec" style="color:var(--blue)"></div><div class="cs">Mês atual</div></div>
-    <div class="card"><div class="ci ci-r"><svg viewBox="0 0 24 24"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg></div><div class="cl">Despesas · Abril</div><div class="cv" id="kpi-desp" style="color:var(--red)"></div><div class="cs" id="kpi-desp-s"></div></div>
-    <div class="card"><div class="ci ci-g"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="cl">Saldo · Abril</div><div class="cv" id="kpi-saldo"></div><div class="cs" id="kpi-saldo-s"></div></div>
-    <div class="card"><div class="ci ci-a"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="cl">Taxa de Poupança</div><div class="cv" id="kpi-poup" style="color:var(--amber)"></div><div style="margin-top:5px" id="kpi-poup-badge"></div></div>
+    <div class="card"><div class="ci ci-b"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="cl">Receita</div><div class="cv" id="kpi-rec" style="color:var(--blue)">—</div><div class="cs" id="kpi-rec-s">—</div></div>
+    <div class="card"><div class="ci ci-r"><svg viewBox="0 0 24 24"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg></div><div class="cl">Despesas</div><div class="cv" id="kpi-desp" style="color:var(--red)">—</div><div class="cs" id="kpi-desp-s">—</div></div>
+    <div class="card"><div class="ci ci-g"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="cl">Saldo</div><div class="cv" id="kpi-saldo">—</div><div class="cs" id="kpi-saldo-s">—</div></div>
+    <div class="card"><div class="ci ci-a"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="cl">Taxa de Poupança</div><div class="cv" id="kpi-poup" style="color:var(--amber)">—</div><div style="margin-top:5px" id="kpi-poup-badge"></div></div>
   </div>
+
   <div class="g2 mb12">
     <div class="card">
       <div class="sh">Status do Período</div>
@@ -187,32 +274,42 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
     </div>
     <div class="card">
       <div class="sh">Despesas por Categoria</div>
-      <div style="font-size:10px;color:var(--text3);text-align:center;margin-bottom:6px;font-style:italic">Toque em uma fatia para detalhes 👆</div>
-      <div class="dw"><canvas id="ch-donut"></canvas><div class="dc"><div class="dcv" id="donut-cv"></div><div class="dcl">Total</div></div></div>
+      <div class="donut-hint" style="font-size:10px;color:var(--text3);text-align:center;margin-bottom:6px;font-style:italic">Toque em uma fatia para detalhes 👆</div>
+      <div class="dw"><canvas id="ch-donut"></canvas><div class="dc"><div class="dcv" id="donut-center-v">—</div><div class="dcl">Total</div></div></div>
       <div class="leg" id="leg-donut"></div>
     </div>
   </div>
+
   <div class="card mb12">
     <div class="sh">Detalhamento de Gastos</div>
     <div class="drill-hint">Toque em uma linha para ver as descrições ›</div>
     <div class="tw"><table class="tbl"><thead><tr><th>Categoria</th><th>Valor</th><th>% Receita</th><th style="min-width:90px">Part.</th></tr></thead><tbody id="tbl-cat"></tbody></table></div>
   </div>
-  <div class="card">
+
+  <div class="card mb12">
     <div class="sh">% da Receita por Categoria</div>
     <div class="drill-hint">Toque em uma barra para detalhes ›</div>
     <div class="cw ch320"><canvas id="ch-bar"></canvas></div>
   </div>
+
+  <div class="card">
+    <div class="sh">Evolução Mensal — Receita & Despesas</div>
+    <div class="cw ch260"><canvas id="ch-trend"></canvas></div>
+  </div>
 </section>
 
-<!-- ══ BALANÇA ══ -->
+<!-- ══ TAB 2: BALANÇA PATRIMONIAL ══ -->
 <section id="balanca" class="section">
-  <div style="font-size:11px;color:var(--text2);margin-bottom:10px;padding:7px 12px;background:var(--bg2);border-radius:8px;border:1px solid var(--border)">📊 Posição patrimonial em Abril 2026</div>
-  <div class="g4 mb12">
-    <div class="card"><div class="ci ci-b"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="cl">Total de Ativos</div><div class="cv" id="bal-ativos" style="color:var(--blue)"></div><div class="cs" id="bal-ativos-s"></div></div>
-    <div class="card"><div class="ci ci-r"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div><div class="cl">Total de Passivos</div><div class="cv" id="bal-passivos" style="color:var(--red)"></div><div class="cs">Financiamentos e dívidas</div></div>
-    <div class="card"><div class="ci ci-g"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/></svg></div><div class="cl">Patrimônio Líquido</div><div class="cv" id="bal-pat"></div><div style="margin-top:5px" id="bal-pat-badge"></div></div>
-    <div class="card"><div class="ci ci-a"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="cl">Solidez Patrimonial</div><div class="cv" id="bal-solidez" style="color:var(--amber)"></div><div style="margin-top:5px" id="bal-solidez-badge"></div></div>
+  <div style="font-size:11px;color:var(--text2);margin-bottom:10px;padding:7px 12px;background:var(--bg2);border-radius:8px;border:1px solid var(--border)">
+    📊 Valores acumulados até o mês selecionado (visão patrimonial YTD)
   </div>
+  <div class="g4 mb12">
+    <div class="card"><div class="ci ci-b"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="cl">Total de Ativos</div><div class="cv" id="bal-ativos" style="color:var(--blue)">—</div><div class="cs" id="bal-ativos-s">—</div></div>
+    <div class="card"><div class="ci ci-r"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div><div class="cl">Total de Passivos</div><div class="cv" id="bal-passivos" style="color:var(--red)">—</div><div class="cs">Financiamentos e dívidas</div></div>
+    <div class="card"><div class="ci ci-g"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/></svg></div><div class="cl">Patrimônio Líquido</div><div class="cv" id="bal-pat">—</div><div style="margin-top:5px" id="bal-pat-badge"></div></div>
+    <div class="card"><div class="ci ci-a"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="cl">Solidez Patrimonial</div><div class="cv" id="bal-solidez" style="color:var(--amber)">—</div><div style="margin-top:5px" id="bal-solidez-badge"></div></div>
+  </div>
+
   <div class="g2 mb12">
     <div class="card">
       <div class="sh">Indicadores Patrimoniais</div>
@@ -224,7 +321,9 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
       <div class="sh">Reserva de Emergência</div>
       <div class="gw">
         <svg width="210" height="120" viewBox="0 0 210 120" style="overflow:visible">
-          <defs><linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#ef4444"/><stop offset="40%" stop-color="#f59e0b"/><stop offset="80%" stop-color="#10b981"/></linearGradient></defs>
+          <defs><linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ef4444"/><stop offset="40%" stop-color="#f59e0b"/><stop offset="80%" stop-color="#10b981"/>
+          </linearGradient></defs>
           <path d="M15 105 A90 90 0 0 1 195 105" stroke="#1e2d4a" stroke-width="14" fill="none" stroke-linecap="round"/>
           <path id="g-prog" d="M15 105 A90 90 0 0 1 195 105" stroke="url(#gg)" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="0 283" stroke-dashoffset="0"/>
           <text x="9" y="113" fill="#4d6a94" font-size="8" font-family="Courier New">0%</text>
@@ -233,7 +332,7 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
           <line id="g-needle" x1="105" y1="105" x2="22" y2="110" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
           <circle cx="105" cy="105" r="5" fill="#3b82f6"/><circle cx="105" cy="105" r="2.5" fill="#0d1526"/>
         </svg>
-        <div class="gv" id="g-pct-txt"></div>
+        <div class="gv" id="g-pct-txt">—</div>
         <div class="gl">da meta atingida</div>
       </div>
       <div class="hr" style="margin:10px 0"></div>
@@ -242,14 +341,20 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
       <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--text3);margin-top:3px"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
     </div>
   </div>
-  <div class="card">
+
+  <div class="card mb12">
     <div class="sh">Composição Patrimonial</div>
     <div class="drill-hint">Toque em uma categoria para ver o detalhamento ›</div>
     <div class="g2" style="gap:9px;margin-top:7px" id="pat-list"></div>
   </div>
+
+  <div class="card">
+    <div class="sh">Evolução Patrimonial — Acumulado Mensal</div>
+    <div class="cw ch260"><canvas id="ch-pat-trend"></canvas></div>
+  </div>
 </section>
 
-<!-- ══ PERFIL ══ -->
+<!-- ══ TAB 3: PERFIL & ESTILO DE VIDA ══ -->
 <section id="perfil" class="section">
   <div class="g4 mb12" id="perfil-cards"></div>
   <div class="g2 mb12">
@@ -259,25 +364,32 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
       <div class="hr"></div>
       <div id="enquad-block"></div>
     </div>
-    <div class="card"><div class="sh">Conforto/Lifestyle vs Básico</div><div id="cl-block"></div></div>
+    <div class="card">
+      <div class="sh">Conforto/Lifestyle vs Básico</div>
+      <div id="cl-block"></div>
+    </div>
   </div>
   <div class="card mb12">
-    <div class="sh">Classificação por Categoria · Ultra-High</div>
+    <div class="sh">Classificação por Categoria</div>
     <div class="drill-hint">Toque em uma linha para ver as descrições ›</div>
     <div class="tw"><table class="tbl"><thead><tr><th>Categoria</th><th>Valor</th><th>% Receita</th><th>Lim. Básico</th><th>Lim. Conforto</th><th>Classe</th></tr></thead><tbody id="tbl-perfil"></tbody></table></div>
   </div>
   <div class="card">
-    <div class="sh">Radar de Comprometimento</div>
+    <div class="sh">Radar de Comprometimento por Categoria</div>
     <div class="cw ch300" style="max-width:480px;margin:0 auto"><canvas id="ch-radar"></canvas></div>
   </div>
 </section>
 
-<!-- ══ METAS ══ -->
+<!-- ══ TAB 4: METAS ══ -->
 <section id="metas" class="section">
-  <div class="g2 mb12" id="metas-cards"></div>
-  <div class="card">
+  <div class="g3 mb12" id="metas-cards"></div>
+  <div class="card mb12">
     <div class="sh">Meta vs Realizado — Comparativo</div>
     <div class="cw ch260"><canvas id="ch-metas"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="sh">Evolução dos Realizados — Mês a Mês</div>
+    <div class="cw ch260"><canvas id="ch-metas-trend"></canvas></div>
   </div>
 </section>
 </div>
@@ -287,7 +399,7 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
   <div class="mb3">
     <div class="mpull"></div>
     <div class="mhd">
-      <div class="mcat"><div class="mdot" id="mdot"></div><div><div class="mttl" id="mttl"></div><div class="msub" id="msub"></div></div></div>
+      <div class="mcat"><div class="mdot" id="mdot"></div><div><div class="mttl" id="mttl">—</div><div class="msub" id="msub">—</div></div></div>
       <button class="mcls" id="mcls"><svg viewBox="0 0 13 13"><line x1="1" y1="1" x2="12" y2="12"/><line x1="12" y1="1" x2="1" y2="12"/></svg></button>
     </div>
     <div class="mbdy">
@@ -316,329 +428,559 @@ body{background:var(--bg0);color:var(--text1);font-family:var(--sans);min-height
 (function(){
 'use strict';
 
-var D    = {"flow": {"receita": 108977.0, "cats": {"Moradia": {"total": -20194.3, "items": [{"desc": "finan casa Robson", "valor": -6029.32}, {"desc": "finan casa Rose", "valor": -4750.64}, {"desc": "diarista", "valor": -2500.0}, {"desc": "Aluguel Apto", "valor": -2353.5}, {"desc": "parcela consórcio imob", "valor": -1877.69}, {"desc": "condominio apto", "valor": -443.13}, {"desc": "luz casa Robson", "valor": -441.29}, {"desc": "luz casa Rose", "valor": -425.3}, {"desc": "luz apto", "valor": -104.39}, {"desc": "internet casa Robson", "valor": -100.0}, {"desc": "internet apto", "valor": -100.0}, {"desc": "internet casa Rose", "valor": -100.0}, {"desc": "água casa Rose", "valor": -166.0}, {"desc": "água apto", "valor": -76.94}, {"desc": "água casa Robson", "valor": -230.0}, {"desc": "piscineiro", "valor": -250.0}, {"desc": "seguro resid Robson", "valor": -126.1}, {"desc": "gás casa Rose", "valor": -120.0}]}, "Cartão de crédito": {"total": -21960.0, "items": [{"desc": "cartão itaú 1", "valor": -15000.0}, {"desc": "cartão santander", "valor": -5400.0}, {"desc": "cartão itaú 2", "valor": -1560.0}]}, "Veículo": {"total": -21949.41, "items": [{"desc": "finan discovery Robson", "valor": -6500.0}, {"desc": "finan carro 3", "valor": -5950.0}, {"desc": "finan jetta Rose", "valor": -4970.0}, {"desc": "finan moto bmw", "valor": -1888.0}, {"desc": "finan moto2", "valor": -1866.06}, {"desc": "ipva discovery", "valor": -1070.0}, {"desc": "seguro moto bmw", "valor": 294.65}]}, "Essenciais": {"total": -12500.0, "items": [{"desc": "doações/ajudas", "valor": -5000.0}, {"desc": "dizimos/ofertas", "valor": -5000.0}, {"desc": "planejado financeiro", "valor": -2500.0}]}, "Dívidas": {"total": -9228.0, "items": [{"desc": "dívida Gordela", "valor": -9228.0}]}, "Alimentação": {"total": -5600.0, "items": [{"desc": "mercado casa Rose", "valor": -2000.0}, {"desc": "mercado casa Robson", "valor": -1700.0}, {"desc": "refeições fora", "valor": -1500.0}, {"desc": "delivery", "valor": -400.0}]}, "Gastos pessoais": {"total": -3640.0, "items": [{"desc": "vestuário geral", "valor": -2000.0}, {"desc": "presentes", "valor": -1500.0}, {"desc": "barbeiro", "valor": -140.0}]}, "Transporte": {"total": -2620.0, "items": [{"desc": "combustivél", "valor": -2300.0}, {"desc": "van Maria", "valor": -320.0}]}, "Saúde": {"total": -2065.0, "items": [{"desc": "plano odonto 1", "valor": -900.0}, {"desc": "terapia", "valor": -410.0}, {"desc": "medicamentos", "valor": -300.0}, {"desc": "plano odonto 2", "valor": -250.0}, {"desc": "academia Maria", "valor": -205.0}]}, "Educação": {"total": -1690.0, "items": [{"desc": "escola Maria", "valor": -1340.0}, {"desc": "aula canto Maria", "valor": -350.0}]}, "Lazer": {"total": -549.9, "items": [{"desc": "churras/festas", "valor": -500.0}, {"desc": "streaming netflix", "valor": -49.9}]}}}, "balData": {"Imóvel residencial": {"ativos": 750000.0, "passivos": -643033.49, "net": 106966.51, "items": [{"desc": "Valor de mercado (Ativos) casa Robson", "valor": 750000.0, "tipo": "entrada"}, {"desc": "Saldo devedor casa Robson", "valor": -643033.49, "tipo": "saída"}]}, "Veículo": {"ativos": 223000.0, "passivos": -243307.62, "net": -20307.62, "items": [{"desc": "Valor de mercado (Ativos) Discovery", "valor": 115000.0, "tipo": "entrada"}, {"desc": "Valor de mercado moto bmw", "valor": 63000.0, "tipo": "entrada"}, {"desc": "valor de mercado moto2", "valor": 45000.0, "tipo": "entrada"}, {"desc": "Saldo devedor Discovery", "valor": -149500.0, "tipo": "saída"}, {"desc": "Saldo devedor moto2", "valor": -50383.62, "tipo": "saída"}, {"desc": "Saldo devedor moto bmw", "valor": -43424.0, "tipo": "saída"}]}, "Renda Fixa": {"ativos": 8746.89, "passivos": 0, "net": 8746.89, "items": [{"desc": "cdb 3 anos ipca+", "valor": 5237.71, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 3509.18, "tipo": "entrada"}]}, "Reserva de emergência": {"ativos": 5003.18, "passivos": 0, "net": 5003.18, "items": [{"desc": "CDB liquidez diária", "valor": 5003.18, "tipo": "entrada"}]}}, "metas": {"Entrada Financiamento Casa": {"meta": 120000.0, "realizado": 0.0}, "Reserva de emergência": {"meta": 300000.0, "realizado": 5003.18}}};
-var CC   = {"Moradia": "#3b82f6", "Lazer": "#f59e0b", "Alimentação": "#06b6d4", "Transporte": "#84cc16", "Veículo": "#f97316", "Educação": "#a78bfa", "Gastos pessoais": "#10b981", "Essenciais": "#8b5cf6", "Saúde": "#ec4899", "Cartão de crédito": "#ef4444", "Dívidas": "#dc2626"};
-var BC   = {"Reserva de emergência": "#10b981", "Imóvel residencial": "#3b82f6", "Veículo": "#06b6d4", "Renda Fixa": "#8b5cf6", "Renda Variável": "#f59e0b"};
-var fd   = D.flow;
-var bd   = D.balData;
-var md   = D.metas;
+// ── DATA ─────────────────────────────────────────────────────────────────────
+var DATA = {"months": ["Abril", "Maio", "Junho", "Julho", "Agosto"], "flow": {"Abril": {"receita": 108977.0, "cats": {"Moradia": {"total": -20194.3, "items": [{"desc": "Aluguel Apto", "valor": -2353.5}, {"desc": "condominio apto", "valor": -443.13}, {"desc": "finan casa Rose", "valor": -4750.64}, {"desc": "finan casa Robson", "valor": -6029.32}, {"desc": "luz apto", "valor": -104.39}, {"desc": "luz casa Rose", "valor": -425.3}, {"desc": "luz casa Robson", "valor": -441.29}, {"desc": "água apto", "valor": -76.94}, {"desc": "água casa Rose", "valor": -166.0}, {"desc": "gás casa Rose", "valor": -120.0}, {"desc": "internet apto", "valor": -100.0}, {"desc": "internet casa Rose", "valor": -100.0}, {"desc": "internet casa Robson", "valor": -100.0}, {"desc": "seguro resid Robson", "valor": -126.1}, {"desc": "diarista", "valor": -2500.0}, {"desc": "piscineiro", "valor": -250.0}, {"desc": "parcela consórcio imob", "valor": -1877.69}, {"desc": "água casa Robson", "valor": -230.0}]}, "Alimentação": {"total": -5600.0, "items": [{"desc": "mercado casa Rose", "valor": -2000.0}, {"desc": "mercado casa Robson", "valor": -1700.0}, {"desc": "refeições fora", "valor": -1500.0}, {"desc": "delivery", "valor": -400.0}]}, "Transporte": {"total": -2620.0, "items": [{"desc": "combustivél", "valor": -2300.0}, {"desc": "van Maria", "valor": -320.0}]}, "Veículo": {"total": -22538.71, "items": [{"desc": "finan jetta Rose", "valor": -4970.0}, {"desc": "finan discovery Robson", "valor": -6500.0}, {"desc": "finan moto bmw", "valor": -1888.0}, {"desc": "finan moto2", "valor": -1866.06}, {"desc": "seguro moto bmw", "valor": -294.65}, {"desc": "finan carro 3", "valor": -5950.0}, {"desc": "ipva discovery", "valor": -1070.0}]}, "Educação": {"total": -1690.0, "items": [{"desc": "escola Maria", "valor": -1340.0}, {"desc": "aula canto Maria", "valor": -350.0}]}, "Saúde": {"total": -2065.0, "items": [{"desc": "plano odonto 1", "valor": -900.0}, {"desc": "plano odonto 2", "valor": -250.0}, {"desc": "medicamentos", "valor": -300.0}, {"desc": "terapia", "valor": -410.0}, {"desc": "academia Maria", "valor": -205.0}]}, "Lazer": {"total": -549.9, "items": [{"desc": "streaming netflix", "valor": -49.9}, {"desc": "churras/festas", "valor": -500.0}]}, "Gastos pessoais": {"total": -3640.0, "items": [{"desc": "vestuário geral", "valor": -2000.0}, {"desc": "barbeiro", "valor": -140.0}, {"desc": "presentes", "valor": -1500.0}]}, "Essenciais": {"total": -12500.0, "items": [{"desc": "doações/ajudas", "valor": -5000.0}, {"desc": "dizimos/ofertas", "valor": -5000.0}, {"desc": "planejado financeiro", "valor": -2500.0}]}, "Cartão de crédito": {"total": -21960.0, "items": [{"desc": "cartão itaú 1", "valor": -15000.0}, {"desc": "cartão itaú 2", "valor": -1560.0}, {"desc": "cartão santander", "valor": -5400.0}]}, "Dívidas": {"total": -9228.0, "items": [{"desc": "dívida Gordela", "valor": -9228.0}]}}}, "Maio": {"receita": 108977.0, "cats": {"Moradia": {"total": -19503.000000000004, "items": [{"desc": "Aluguel apto", "valor": -2353.5}, {"desc": "condominio apto", "valor": -443.13}, {"desc": "finan casa Robson", "valor": -6029.32}, {"desc": "luz apto", "valor": -104.39}, {"desc": "luz casa Robson", "valor": -441.29}, {"desc": "água apto", "valor": -76.94}, {"desc": "gás casa Rose", "valor": -120.0}, {"desc": "internet apto", "valor": -100.0}, {"desc": "internet casa Robson", "valor": -100.0}, {"desc": "seguro resid Robson", "valor": -126.1}, {"desc": "piscineiro", "valor": -250.0}, {"desc": "diarista", "valor": -2500.0}, {"desc": "parcela consórcio imob", "valor": -1877.69}, {"desc": "água casa Robson", "valor": -230.0}, {"desc": "finan casa rose", "valor": -4750.64}]}, "Alimentação": {"total": -5600.0, "items": [{"desc": "mercado casa Robson", "valor": -1700.0}, {"desc": "refeições fora", "valor": -1500.0}, {"desc": "delivery", "valor": -400.0}, {"desc": "mercado casa Rose", "valor": -2000.0}]}, "Transporte": {"total": -2620.0, "items": [{"desc": "combustivél", "valor": -2300.0}, {"desc": "van Maria", "valor": -320.0}]}, "Veículo": {"total": -22538.71, "items": [{"desc": "finan jetta Rose", "valor": -4970.0}, {"desc": "finan discovery Robson", "valor": -6500.0}, {"desc": "finan moto bmw", "valor": -1888.0}, {"desc": "finan moto2", "valor": -1866.06}, {"desc": "seguro moto bmw", "valor": -294.65}, {"desc": "finan carro 3", "valor": -5950.0}, {"desc": "ipva discovery", "valor": -1070.0}]}, "Educação": {"total": -1690.0, "items": [{"desc": "escola Maria", "valor": -1340.0}, {"desc": "aula canto Maria", "valor": -350.0}]}, "Saúde": {"total": -2055.0, "items": [{"desc": "plano odonto 1", "valor": -900.0}, {"desc": "plano odonto 2", "valor": -250.0}, {"desc": "medicamentos", "valor": -300.0}, {"desc": "terapia", "valor": -400.0}, {"desc": "academia Maria", "valor": -205.0}]}, "Lazer": {"total": -549.9, "items": [{"desc": "streaming netflix", "valor": -49.9}, {"desc": "churras/festas", "valor": -500.0}]}, "Gastos pessoais": {"total": -3640.0, "items": [{"desc": "vestuário geral", "valor": -2000.0}, {"desc": "barbeiro", "valor": -140.0}, {"desc": "presentes", "valor": -1500.0}]}, "Essenciais": {"total": -12500.0, "items": [{"desc": "doações/ajudas", "valor": -5000.0}, {"desc": "dizimos/ofertas", "valor": -5000.0}, {"desc": "planejado financeiro", "valor": -2500.0}]}, "Cartão de crédito": {"total": -21960.0, "items": [{"desc": "cartão itaú 1", "valor": -15000.0}, {"desc": "cartão itaú 2", "valor": -1560.0}, {"desc": "cartão santander", "valor": -5400.0}]}, "Dívidas": {"total": -9228.0, "items": [{"desc": "dívida Gordela", "valor": -9228.0}]}}}, "Junho": {"receita": 108977.0, "cats": {"Moradia": {"total": -19522.36, "items": [{"desc": "Aluguel apto", "valor": -2353.5}, {"desc": "condominio apto", "valor": -443.13}, {"desc": "finan casa Robson", "valor": -6029.32}, {"desc": "luz apto", "valor": -104.39}, {"desc": "luz casa Robson", "valor": -441.29}, {"desc": "água apto", "valor": -76.94}, {"desc": "gás casa Rose", "valor": -120.0}, {"desc": "internet apto", "valor": -100.0}, {"desc": "internet casa Robson", "valor": -120.0}, {"desc": "seguro resid Robson", "valor": -126.1}, {"desc": "piscineiro", "valor": -250.0}, {"desc": "diarista", "valor": -2500.0}, {"desc": "parcela consórcio imob", "valor": -1877.69}, {"desc": "água casa Robson", "valor": -230.0}, {"desc": "finan casa rose", "valor": -4750.0}]}, "Alimentação": {"total": -5600.0, "items": [{"desc": "mercado casa Robson", "valor": -1700.0}, {"desc": "refeições fora", "valor": -1500.0}, {"desc": "delivery", "valor": -400.0}, {"desc": "mercado casa Rose", "valor": -2000.0}]}, "Transporte": {"total": -2620.0, "items": [{"desc": "combustivél", "valor": -2300.0}, {"desc": "van Maria", "valor": -320.0}]}, "Veículo": {"total": -17921.0, "items": [{"desc": "finan jetta Rose", "valor": -4970.0}, {"desc": "finan bmw 320i", "valor": -7001.0}, {"desc": "finan carro 3", "valor": -5950.0}]}, "Educação": {"total": -1690.0, "items": [{"desc": "escola Maria", "valor": -1340.0}, {"desc": "aula canto Maria", "valor": -350.0}]}, "Saúde": {"total": -2055.0, "items": [{"desc": "plano odonto 1", "valor": -900.0}, {"desc": "plano odonto 2", "valor": -250.0}, {"desc": "medicamentos", "valor": -300.0}, {"desc": "terapia", "valor": -400.0}, {"desc": "academia Maria", "valor": -205.0}]}, "Lazer": {"total": -549.9, "items": [{"desc": "streaming netflix", "valor": -49.9}, {"desc": "churras/festas", "valor": -500.0}]}, "Gastos pessoais": {"total": -3640.0, "items": [{"desc": "vestuário geral", "valor": -2000.0}, {"desc": "barbeiro", "valor": -140.0}, {"desc": "presentes", "valor": -1500.0}]}, "Essenciais": {"total": -12500.0, "items": [{"desc": "doações/ajudas", "valor": -5000.0}, {"desc": "dizimos/ofertas", "valor": -5000.0}, {"desc": "planejado financeiro", "valor": -2500.0}]}, "Cartão de crédito": {"total": -21960.0, "items": [{"desc": "cartão itaú 1", "valor": -15000.0}, {"desc": "cartão itaú 2", "valor": -1560.0}, {"desc": "cartão santander", "valor": -5400.0}]}, "Dívidas": {"total": -11028.0, "items": [{"desc": "dívida Gordela", "valor": -9228.0}, {"desc": "divida Ademir", "valor": -1800.0}]}}}, "Julho": {"receita": 108977.0, "cats": {"Moradia": {"total": -16345.59, "items": [{"desc": "Aluguel apto", "valor": -2353.5}, {"desc": "condominio apto", "valor": -443.13}, {"desc": "finan casa Rose", "valor": -6029.32}, {"desc": "luz apto", "valor": -104.39}, {"desc": "luz casa Robson", "valor": -441.0}, {"desc": "gás casa Robson", "valor": -120.0}, {"desc": "internet casa Robson", "valor": -120.0}, {"desc": "seguro resid Robson", "valor": -126.56}, {"desc": "Aluguel casa Robson", "valor": -4000.0}, {"desc": "condomino casa Robson", "valor": -500.0}, {"desc": "parcela consórcio imob", "valor": -1877.69}, {"desc": "água casa Robson", "valor": -230.0}]}, "Alimentação": {"total": -3600.0, "items": [{"desc": "mercado casa Robson", "valor": -1700.0}, {"desc": "refeições fora", "valor": -1500.0}, {"desc": "delivery", "valor": -400.0}]}, "Transporte": {"total": -2620.0, "items": [{"desc": "combustivél", "valor": -2300.0}, {"desc": "van Maria", "valor": -320.0}]}, "Veículo": {"total": -17921.0, "items": [{"desc": "finan jetta Rose", "valor": -4970.0}, {"desc": "finan bmw 320i", "valor": -7001.0}, {"desc": "finan carro 3", "valor": -5950.0}]}, "Educação": {"total": -1690.0, "items": [{"desc": "escola Maria", "valor": -1340.0}, {"desc": "aula canto Maria", "valor": -350.0}]}, "Saúde": {"total": -2055.0, "items": [{"desc": "plano odonto 1", "valor": -900.0}, {"desc": "plano odonto 2", "valor": -250.0}, {"desc": "medicamentos", "valor": -300.0}, {"desc": "terapia", "valor": -400.0}, {"desc": "academia Maria", "valor": -205.0}]}, "Lazer": {"total": -549.9, "items": [{"desc": "streaming netflix", "valor": -49.9}, {"desc": "churras/festas", "valor": -500.0}]}, "Gastos pessoais": {"total": -3640.0, "items": [{"desc": "vestuário geral", "valor": -2000.0}, {"desc": "barbeiro", "valor": -140.0}, {"desc": "presentes", "valor": -1500.0}]}, "Essenciais": {"total": -12500.0, "items": [{"desc": "doações/ajudas", "valor": -5000.0}, {"desc": "dizimos/ofertas", "valor": -5000.0}, {"desc": "planejado financeiro", "valor": -2500.0}]}, "Cartão de crédito": {"total": -21960.0, "items": [{"desc": "cartão itaú 1", "valor": -15000.0}, {"desc": "cartão itaú 2", "valor": -1560.0}, {"desc": "cartão santander", "valor": -5400.0}]}, "Dívidas": {"total": -11028.0, "items": [{"desc": "dívida Gordela", "valor": -9228.0}, {"desc": "divida Ademir", "valor": -1800.0}]}}}, "Agosto": {"receita": 108977.0, "cats": {"Moradia": {"total": -16345.59, "items": [{"desc": "Aluguel apto", "valor": -2353.5}, {"desc": "condominio apto", "valor": -443.13}, {"desc": "finan casa Rose", "valor": -6029.32}, {"desc": "luz apto", "valor": -104.39}, {"desc": "luz casa Robson", "valor": -441.0}, {"desc": "gás casa Robson", "valor": -120.0}, {"desc": "internet casa Robson", "valor": -120.0}, {"desc": "seguro resid Robson", "valor": -126.56}, {"desc": "Aluguel casa Robson", "valor": -4000.0}, {"desc": "condomino casa Robson", "valor": -500.0}, {"desc": "parcela consórcio imob", "valor": -1877.69}, {"desc": "água casa Robson", "valor": -230.0}]}, "Alimentação": {"total": -3600.0, "items": [{"desc": "mercado casa Robson", "valor": -1700.0}, {"desc": "refeições fora", "valor": -1500.0}, {"desc": "delivery", "valor": -400.0}]}, "Transporte": {"total": -2620.0, "items": [{"desc": "combustivél", "valor": -2300.0}, {"desc": "van Maria", "valor": -320.0}]}, "Veículo": {"total": -17921.0, "items": [{"desc": "finan jetta Rose", "valor": -4970.0}, {"desc": "finan bmw 320i", "valor": -7001.0}, {"desc": "finan carro 3", "valor": -5950.0}]}, "Educação": {"total": -1690.0, "items": [{"desc": "escola Maria", "valor": -1340.0}, {"desc": "aula canto Maria", "valor": -350.0}]}, "Saúde": {"total": -2055.0, "items": [{"desc": "plano odonto 1", "valor": -900.0}, {"desc": "plano odonto 2", "valor": -250.0}, {"desc": "medicamentos", "valor": -300.0}, {"desc": "terapia", "valor": -400.0}, {"desc": "academia Maria", "valor": -205.0}]}, "Lazer": {"total": -549.9, "items": [{"desc": "streaming netflix", "valor": -49.9}, {"desc": "churras/festas", "valor": -500.0}]}, "Gastos pessoais": {"total": -3640.0, "items": [{"desc": "vestuário geral", "valor": -2000.0}, {"desc": "barbeiro", "valor": -140.0}, {"desc": "presentes", "valor": -1500.0}]}, "Essenciais": {"total": -12500.0, "items": [{"desc": "doações/ajudas", "valor": -5000.0}, {"desc": "dizimos/ofertas", "valor": -5000.0}, {"desc": "planejado financeiro", "valor": -2500.0}]}, "Cartão de crédito": {"total": -21960.0, "items": [{"desc": "cartão itaú 1", "valor": -15000.0}, {"desc": "cartão itaú 2", "valor": -1560.0}, {"desc": "cartão santander", "valor": -5400.0}]}, "Dívidas": {"total": -11028.0, "items": [{"desc": "dívida Gordela", "valor": -9228.0}, {"desc": "divida Ademir", "valor": -1800.0}]}}}}, "balByMonth": {"Abril": {"Reserva de emergência": {"ativos": 5003.18, "passivos": 0.0, "net": 5003.18, "items": [{"desc": "CDB liquidez diária", "valor": 5003.18, "tipo": "entrada"}]}, "Imóvel residencial": {"ativos": 750000.0, "passivos": -643033.49, "net": 106966.51000000001, "items": [{"desc": "Saldo devedor casa Rose", "valor": -643033.49, "tipo": "saída"}, {"desc": "Valor de mercado (Ativos) casa Rose", "valor": 750000.0, "tipo": "entrada"}]}, "Veículo": {"ativos": 223000.0, "passivos": -243307.62, "net": -20307.619999999995, "items": [{"desc": "Saldo devedor Discovery", "valor": -149500.0, "tipo": "saída"}, {"desc": "Valor de mercado (Ativos) Discovery", "valor": 115000.0, "tipo": "entrada"}, {"desc": "Saldo devedor moto bmw", "valor": -43424.0, "tipo": "saída"}, {"desc": "Saldo devedor moto2", "valor": -50383.62, "tipo": "saída"}, {"desc": "Valor de mercado moto bmw", "valor": 63000.0, "tipo": "entrada"}, {"desc": "valor de mercado moto2", "valor": 45000.0, "tipo": "entrada"}]}, "Renda Fixa": {"ativos": 8746.89, "passivos": 0.0, "net": 8746.89, "items": [{"desc": "cdb 3 anos ipca+", "valor": 5237.71, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 3509.18, "tipo": "entrada"}]}}, "Maio": {"Reserva de emergência": {"ativos": 5003.18, "passivos": 0.0, "net": 5003.18, "items": [{"desc": "CDB liquidez diária", "valor": 5003.18, "tipo": "entrada"}]}, "Imóvel residencial": {"ativos": 756029.32, "passivos": -643033.49, "net": 112995.82999999996, "items": [{"desc": "Saldo devedor casa Rose", "valor": -643033.49, "tipo": "saída"}, {"desc": "Valor de mercado (Ativos) casa Rose", "valor": 750000.0, "tipo": "entrada"}, {"desc": "Casa Rose (Solidez)", "valor": 6029.32, "tipo": "financiamento"}]}, "Veículo": {"ativos": 466307.62, "passivos": -243307.62, "net": 223000.0, "items": [{"desc": "Saldo devedor Discovery", "valor": -149500.0, "tipo": "saída"}, {"desc": "Valor de mercado (Ativos) Discovery", "valor": 115000.0, "tipo": "entrada"}, {"desc": "Saldo devedor moto bmw", "valor": -43424.0, "tipo": "saída"}, {"desc": "Saldo devedor moto2", "valor": -50383.62, "tipo": "saída"}, {"desc": "Valor de mercado moto bmw", "valor": 63000.0, "tipo": "entrada"}, {"desc": "valor de mercado moto2", "valor": 45000.0, "tipo": "entrada"}, {"desc": "Discovery (Solidez)", "valor": 6500.0, "tipo": "financiamento"}, {"desc": "Discovery (Solidez)", "valor": 143000.0, "tipo": "financiamento"}, {"desc": "Moto BMW (Solidez)", "valor": 43424.0, "tipo": "financiamento"}, {"desc": "Moto 2 (Solidez)", "valor": 50383.62, "tipo": "financiamento"}]}, "Renda Fixa": {"ativos": 9146.89, "passivos": 0.0, "net": 9146.89, "items": [{"desc": "cdb 3 anos ipca+", "valor": 5237.71, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 3509.18, "tipo": "entrada"}, {"desc": "cdb 3 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 200.0, "tipo": "entrada"}]}}, "Junho": {"Reserva de emergência": {"ativos": 5003.18, "passivos": 0.0, "net": 5003.18, "items": [{"desc": "CDB liquidez diária", "valor": 5003.18, "tipo": "entrada"}]}, "Imóvel residencial": {"ativos": 12058.639999999948, "passivos": -643033.49, "net": -630974.8500000001, "items": [{"desc": "Saldo devedor casa Rose", "valor": -643033.49, "tipo": "saída"}, {"desc": "Valor de mercado (Ativos) casa Rose", "valor": 750000.0, "tipo": "entrada"}, {"desc": "Casa Rose (Solidez)", "valor": 6029.32, "tipo": "financiamento"}, {"desc": "Repasse (Ativo) Casa Rose", "valor": -750000.0, "tipo": "entrada"}, {"desc": "Casa Rose (Solidez)", "valor": 6029.32, "tipo": "financiamento"}]}, "Veículo": {"ativos": 441341.62, "passivos": -474340.62, "net": -32999.0, "items": [{"desc": "Saldo devedor Discovery", "valor": -149500.0, "tipo": "saída"}, {"desc": "Valor de mercado (Ativos) Discovery", "valor": 115000.0, "tipo": "entrada"}, {"desc": "Saldo devedor moto bmw", "valor": -43424.0, "tipo": "saída"}, {"desc": "Saldo devedor moto2", "valor": -50383.62, "tipo": "saída"}, {"desc": "Valor de mercado moto bmw", "valor": 63000.0, "tipo": "entrada"}, {"desc": "valor de mercado moto2", "valor": 45000.0, "tipo": "entrada"}, {"desc": "Discovery (Solidez)", "valor": 6500.0, "tipo": "financiamento"}, {"desc": "Discovery (Solidez)", "valor": 143000.0, "tipo": "financiamento"}, {"desc": "Moto BMW (Solidez)", "valor": 43424.0, "tipo": "financiamento"}, {"desc": "Moto 2 (Solidez)", "valor": 50383.62, "tipo": "financiamento"}, {"desc": "Venda (Ativos) Discovery", "valor": -115000.0, "tipo": "entrada"}, {"desc": "Venda (Ativos) Moto BMW", "valor": -63000.0, "tipo": "entrada"}, {"desc": "Venda (Ativos) Moto2", "valor": -45000.0, "tipo": "entrada"}, {"desc": "Valor de mercado (Ativos) BMW 320i", "valor": 191033.0, "tipo": "entrada"}, {"desc": "Saldo devedor BMW320i", "valor": -231033.0, "tipo": "saída"}, {"desc": "bmw 320i (Solidez)", "valor": 7001.0, "tipo": "financiamento"}]}, "Renda Fixa": {"ativos": 9546.89, "passivos": 0.0, "net": 9546.89, "items": [{"desc": "cdb 3 anos ipca+", "valor": 5237.71, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 3509.18, "tipo": "entrada"}, {"desc": "cdb 3 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 3 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 200.0, "tipo": "entrada"}]}}, "Julho": {"Reserva de emergência": {"ativos": 5003.18, "passivos": 0.0, "net": 5003.18, "items": [{"desc": "CDB liquidez diária", "valor": 5003.18, "tipo": "entrada"}]}, "Imóvel residencial": {"ativos": 18087.95999999995, "passivos": -643033.49, "net": -624945.53, "items": [{"desc": "Saldo devedor casa Rose", "valor": -643033.49, "tipo": "saída"}, {"desc": "Valor de mercado (Ativos) casa Rose", "valor": 750000.0, "tipo": "entrada"}, {"desc": "Casa Rose (Solidez)", "valor": 6029.32, "tipo": "financiamento"}, {"desc": "Repasse (Ativo) Casa Rose", "valor": -750000.0, "tipo": "entrada"}, {"desc": "Casa Rose (Solidez)", "valor": 6029.32, "tipo": "financiamento"}, {"desc": "Casa Rose (Solidez)", "valor": 6029.32, "tipo": "financiamento"}]}, "Veículo": {"ativos": 448342.62, "passivos": -474340.62, "net": -25998.0, "items": [{"desc": "Saldo devedor Discovery", "valor": -149500.0, "tipo": "saída"}, {"desc": "Valor de mercado (Ativos) Discovery", "valor": 115000.0, "tipo": "entrada"}, {"desc": "Saldo devedor moto bmw", "valor": -43424.0, "tipo": "saída"}, {"desc": "Saldo devedor moto2", "valor": -50383.62, "tipo": "saída"}, {"desc": "Valor de mercado moto bmw", "valor": 63000.0, "tipo": "entrada"}, {"desc": "valor de mercado moto2", "valor": 45000.0, "tipo": "entrada"}, {"desc": "Discovery (Solidez)", "valor": 6500.0, "tipo": "financiamento"}, {"desc": "Discovery (Solidez)", "valor": 143000.0, "tipo": "financiamento"}, {"desc": "Moto BMW (Solidez)", "valor": 43424.0, "tipo": "financiamento"}, {"desc": "Moto 2 (Solidez)", "valor": 50383.62, "tipo": "financiamento"}, {"desc": "Venda (Ativos) Discovery", "valor": -115000.0, "tipo": "entrada"}, {"desc": "Venda (Ativos) Moto BMW", "valor": -63000.0, "tipo": "entrada"}, {"desc": "Venda (Ativos) Moto2", "valor": -45000.0, "tipo": "entrada"}, {"desc": "Valor de mercado (Ativos) BMW 320i", "valor": 191033.0, "tipo": "entrada"}, {"desc": "Saldo devedor BMW320i", "valor": -231033.0, "tipo": "saída"}, {"desc": "bmw 320i (Solidez)", "valor": 7001.0, "tipo": "financiamento"}, {"desc": "bmw 320i (Solidez)", "valor": 7001.0, "tipo": "financiamento"}]}, "Renda Fixa": {"ativos": 9946.89, "passivos": 0.0, "net": 9946.89, "items": [{"desc": "cdb 3 anos ipca+", "valor": 5237.71, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 3509.18, "tipo": "entrada"}, {"desc": "cdb 3 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 3 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 3 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 200.0, "tipo": "entrada"}]}}, "Agosto": {"Reserva de emergência": {"ativos": 5003.18, "passivos": 0.0, "net": 5003.18, "items": [{"desc": "CDB liquidez diária", "valor": 5003.18, "tipo": "entrada"}]}, "Imóvel residencial": {"ativos": 24117.279999999948, "passivos": -643033.49, "net": -618916.2100000001, "items": [{"desc": "Saldo devedor casa Rose", "valor": -643033.49, "tipo": "saída"}, {"desc": "Valor de mercado (Ativos) casa Rose", "valor": 750000.0, "tipo": "entrada"}, {"desc": "Casa Rose (Solidez)", "valor": 6029.32, "tipo": "financiamento"}, {"desc": "Repasse (Ativo) Casa Rose", "valor": -750000.0, "tipo": "entrada"}, {"desc": "Casa Rose (Solidez)", "valor": 6029.32, "tipo": "financiamento"}, {"desc": "Casa Rose (Solidez)", "valor": 6029.32, "tipo": "financiamento"}, {"desc": "Casa Rose (Solidez)", "valor": 6029.32, "tipo": "financiamento"}]}, "Veículo": {"ativos": 455343.62, "passivos": -474340.62, "net": -18997.0, "items": [{"desc": "Saldo devedor Discovery", "valor": -149500.0, "tipo": "saída"}, {"desc": "Valor de mercado (Ativos) Discovery", "valor": 115000.0, "tipo": "entrada"}, {"desc": "Saldo devedor moto bmw", "valor": -43424.0, "tipo": "saída"}, {"desc": "Saldo devedor moto2", "valor": -50383.62, "tipo": "saída"}, {"desc": "Valor de mercado moto bmw", "valor": 63000.0, "tipo": "entrada"}, {"desc": "valor de mercado moto2", "valor": 45000.0, "tipo": "entrada"}, {"desc": "Discovery (Solidez)", "valor": 6500.0, "tipo": "financiamento"}, {"desc": "Discovery (Solidez)", "valor": 143000.0, "tipo": "financiamento"}, {"desc": "Moto BMW (Solidez)", "valor": 43424.0, "tipo": "financiamento"}, {"desc": "Moto 2 (Solidez)", "valor": 50383.62, "tipo": "financiamento"}, {"desc": "Venda (Ativos) Discovery", "valor": -115000.0, "tipo": "entrada"}, {"desc": "Venda (Ativos) Moto BMW", "valor": -63000.0, "tipo": "entrada"}, {"desc": "Venda (Ativos) Moto2", "valor": -45000.0, "tipo": "entrada"}, {"desc": "Valor de mercado (Ativos) BMW 320i", "valor": 191033.0, "tipo": "entrada"}, {"desc": "Saldo devedor BMW320i", "valor": -231033.0, "tipo": "saída"}, {"desc": "bmw 320i (Solidez)", "valor": 7001.0, "tipo": "financiamento"}, {"desc": "bmw 320i (Solidez)", "valor": 7001.0, "tipo": "financiamento"}, {"desc": "bmw 320i (Solidez)", "valor": 7001.0, "tipo": "financiamento"}]}, "Renda Fixa": {"ativos": 10346.89, "passivos": 0.0, "net": 10346.89, "items": [{"desc": "cdb 3 anos ipca+", "valor": 5237.71, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 3509.18, "tipo": "entrada"}, {"desc": "cdb 3 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 3 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 3 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 3 anos ipca+", "valor": 200.0, "tipo": "entrada"}, {"desc": "cdb 2 anos ipca+", "valor": 200.0, "tipo": "entrada"}]}}}, "metas": {"Médio": 120000.0, "Reserva de emergência": 300000.0}, "realizados": {"Abril": {"Médio": 0.0}, "Maio": {"Médio": 0.0}, "Junho": {"Médio": 0.0}, "Julho": {"Médio": 0.0}, "Agosto": {"Médio": 0.0}}, "realizados_cum": {"Abril": {"Médio": 0.0}, "Maio": {"Médio": 0.0}, "Junho": {"Médio": 0.0}, "Julho": {"Médio": 0.0}, "Agosto": {"Médio": 0.0}}};
+var CAT_COLORS = {"Moradia": "#3b82f6", "Lazer": "#f59e0b", "Alimentação": "#06b6d4", "Transporte": "#84cc16", "Veículo": "#f97316", "Veículo ": "#f97316", "Educação": "#a78bfa", "Gastos pessoais": "#10b981", "Essenciais": "#8b5cf6", "Saúde": "#ec4899", "Cartão de crédito": "#ef4444", "Dívidas": "#dc2626"};
+var BAL_COLORS = {"Reserva de emergência": "#10b981", "Imóvel residencial": "#3b82f6", "Veículo": "#06b6d4", "Veículo ": "#06b6d4", "Renda Fixa": "#8b5cf6", "Renda Variável": "#f59e0b"};
 
-var CL = {
-  'Moradia':        {b:0.22,c:0.30},
-  'Veículo':        {
-    'Base':       {b:0.08,c:0.12},
-    'Afluente':   {b:0.08,c:0.12},
-    'Premium':    {b:0.10,c:0.15},
-    'High':       {b:0.12,c:0.18},
-    'Ultra-High': {b:0.15,c:0.22}
-  },
-  'Lazer':          {b:0.06,c:0.10},
-  'Gastos pessoais':{b:0.03,c:0.06},
-  'Educação':       {b:0.06,c:0.12},
-  'Alimentação':    {b:0.18,c:0.25},
+var MONTHS = DATA.months;
+var CLASS_LIMITS = {
+  'Moradia':        {'Base':{b:0.35,c:0.45},'Afluente':{b:0.30,c:0.35},'Premium':{b:0.28,c:0.35},'High':{b:0.25,c:0.32},'Ultra-High':{b:0.22,c:0.30}},
+  'Veículo':        {'Base':{b:0.08,c:0.12},'Afluente':{b:0.08,c:0.12},'Premium':{b:0.10,c:0.15},'High':{b:0.12,c:0.18},'Ultra-High':{b:0.15,c:0.22}},
+  'Lazer':          {'Base':{b:0.08,c:0.12},'Afluente':{b:0.06,c:0.10},'Premium':{b:0.08,c:0.12},'High':{b:0.10,c:0.15},'Ultra-High':{b:0.12,c:0.18}},
+  'Gastos pessoais':{'Base':{b:0.05,c:0.10},'Afluente':{b:0.03,c:0.06},'Premium':{b:0.04,c:0.08},'High':{b:0.06,c:0.12},'Ultra-High':{b:0.08,c:0.15}},
+  'Educação':       {'Base':{b:0.08,c:0.15},'Afluente':{b:0.06,c:0.12},'Premium':{b:0.07,c:0.15},'High':{b:0.08,c:0.18},'Ultra-High':{b:0.10,c:0.22}},
+  'Alimentação':    {'Base':{b:0.30,c:0.40},'Afluente':{b:0.18,c:0.25},'Premium':{b:0.15,c:0.22},'High':{b:0.12,c:0.20},'Ultra-High':{b:0.10,c:0.15}},
   'Transporte':     {b:0.10,c:0.15},
   'Essenciais':     {b:0.10,c:0.15},
   'Saúde':          {b:0.03,c:0.07}
 };
 
-var charts={}, ddChart=null;
+// ── STATE ────────────────────────────────────────────────────────────────────
+var selMonth = 'Agosto';
+var charts = {};
+var ddChart = null;
 
+// ── HELPERS ──────────────────────────────────────────────────────────────────
 function fmt(v){return 'R$ '+Math.abs(v).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function fmtK(v){var a=Math.abs(v);return a>=1000?'R$ '+(a/1000).toFixed(1).replace('.',',')+' k':'R$ '+a.toFixed(0);}
 function pctFmt(v){return (v*100).toFixed(1).replace('.',',')+' %';}
-function classify(name,p,faixa){
-  var lAll=CL[name];if(!lAll)return{lbl:'—',cls:''};
-  var l=(faixa&&lAll[faixa])?lAll[faixa]:lAll.b!=null?lAll:(lAll['Afluente']||lAll);
-  if(p<=l.b)return{lbl:'Básico',cls:'pill pb'};
-  if(p<=l.c)return{lbl:'Conforto',cls:'pill pc'};
-  return{lbl:'Lifestyle',cls:'pill pl'};
+function limitesDe(name,faixa){
+  var l=CLASS_LIMITS[name];if(!l)return null;
+  if(l.b!=null)return l;
+  return l[faixa]||l['Afluente']||null;
 }
-function faixaRenda(r){if(r>=70000)return 'Ultra-High';if(r>=40000)return 'High';if(r>=25000)return 'Premium';if(r>=15000)return 'Afluente';return 'Base';}
-function scoreR(f){return {'Base':1,'Afluente':2,'Premium':3,'High':4,'Ultra-High':5}[f]||2;}
-function estiloVida(p){if(p>0.40)return{lbl:'Insustentável',s:5};if(p>0.35)return{lbl:'Ultra-High',s:4};if(p>0.30)return{lbl:'High',s:3};if(p>0.25)return{lbl:'Premium',s:2};return{lbl:'Afluente',s:1};}
-function limC(f){return{'Base':0.70,'Afluente':0.65,'Premium':0.60,'High':0.55,'Ultra-High':0.50}[f]||0.65;}
-function limCL(f){return{'Base':0.25,'Afluente':0.25,'Premium':0.30,'High':0.35,'Ultra-High':0.40}[f]||0.25;}
+function classify(name,p,faixa){
+  var l=limitesDe(name,faixa);if(!l)return {lbl:'—',cls:''};
+  if(p<=l.b)return {lbl:'Básico',cls:'pill pb'};
+  if(p<=l.c)return {lbl:'Conforto',cls:'pill pc'};
+  return {lbl:'Lifestyle',cls:'pill pl'};
+}
+function faixaRenda(rec){
+  if(rec>=70000)return 'Ultra-High';
+  if(rec>=40000)return 'High';
+  if(rec>=25000)return 'Premium';
+  if(rec>=15000)return 'Afluente';
+  return 'Base';
+}
+function scoreRenda(faixa){return {Base:1,Afluente:2,Premium:3,High:4,'Ultra-High':5}[faixa]||2;}
+function estiloVida(pctCL){
+  if(pctCL>0.40)return {lbl:'Insustentável',score:5};
+  if(pctCL>0.35)return {lbl:'Ultra-High',score:4};
+  if(pctCL>0.30)return {lbl:'High',score:3};
+  if(pctCL>0.25)return {lbl:'Premium',score:2};
+  return {lbl:'Afluente',score:1};
+}
+function limComp(faixa){return {Base:0.70,'Afluente':0.65,Premium:0.60,High:0.55,'Ultra-High':0.50}[faixa]||0.65;}
+function limCL(faixa){return {Base:0.25,'Afluente':0.25,Premium:0.30,High:0.35,'Ultra-High':0.40}[faixa]||0.25;}
+function semClr(cond){return cond?'sg':'sr';}
+function sdot(cond){return cond?'sdg':'sdr';}
 function el(id){return document.getElementById(id);}
 function html(id,h){var e=el(id);if(e)e.innerHTML=h;}
 function txt(id,t){var e=el(id);if(e)e.textContent=t;}
 
-// ── TABS ──────────────────────────────────────────────────────────────────────
-document.querySelectorAll('.tab').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var id=btn.getAttribute('data-tab');
-    document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});
-    document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active');});
-    btn.classList.add('active');el(id).classList.add('active');
-    setTimeout(function(){Object.values(Chart.instances).forEach(function(c){try{c.resize();}catch(e){}});},60);
+// ── GET FLOW DATA FOR SELECTED MONTH ─────────────────────────────────────────
+function getFlowForMonth(month){
+  if(!DATA.flow[month] && month !== 'Todos') month = 'Dezembro';
+  if(month === 'Todos'){
+    // aggregate all months
+    var agg = {receita:0, cats:{}};
+    MONTHS.forEach(function(m){
+      var fd = DATA.flow[m];
+      agg.receita += fd.receita;
+      Object.keys(fd.cats).forEach(function(cat){
+        if(!agg.cats[cat]) agg.cats[cat]={total:0,items:[]};
+        agg.cats[cat].total += fd.cats[cat].total;
+        (fd.cats[cat].items||[]).forEach(function(item){
+          var found = agg.cats[cat].items.find(function(x){return x.desc===item.desc;});
+          if(found) found.valor = Math.round((found.valor+item.valor)*100)/100;
+          else agg.cats[cat].items.push({desc:item.desc,valor:item.valor});
+        });
+      });
+    });
+    // sort items
+    Object.keys(agg.cats).forEach(function(cat){
+      agg.cats[cat].items.sort(function(a,b){return a.valor-b.valor;});
+      agg.cats[cat].total = Math.round(agg.cats[cat].total*100)/100;
+    });
+    return agg;
+  }
+  return DATA.flow[month];
+}
+
+function getBalForMonth(month){
+  var m = (month==='Todos') ? 'Dezembro' : month;
+  return DATA.balByMonth[m];
+}
+
+function getMetasForMonth(month){
+  if(month==='Todos'){
+    return {realizados: DATA.realizados_cum['Dezembro'], label:'Acumulado 2026'};
+  }
+  return {realizados: DATA.realizados_cum[month], label:month};
+}
+
+// ── TABS ─────────────────────────────────────────────────────────────────────
+function initTabs(){
+  document.querySelectorAll('.tab').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var id=btn.getAttribute('data-tab');
+      document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});
+      document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active');});
+      btn.classList.add('active');
+      el(id).classList.add('active');
+      setTimeout(resizeCharts,60);
+    });
   });
-});
+}
 
-// ── FLUXO ─────────────────────────────────────────────────────────────────────
-function buildFluxo(){
-  var rec=fd.receita;
-  var despTotal=Object.values(fd.cats).reduce(function(s,c){return s+c.total;},0);
-  var saldo=rec+despTotal; var poup=saldo/rec;
-  var faixa=faixaRenda(rec); var comp=Math.abs(despTotal)/rec;
-  var lc=limC(faixa);
+// ── MONTH FILTER ─────────────────────────────────────────────────────────────
+function initMonthFilter(){
+  document.querySelectorAll('.month-pill').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.month-pill').forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      selMonth = btn.getAttribute('data-month');
+      el('hdr-mes').textContent = selMonth==='Todos' ? '2026 · Ano Completo' : selMonth+' 2026';
+      updateAll();
+    });
+  });
+}
 
-  txt('kpi-rec',fmt(rec));
-  txt('kpi-desp',fmt(despTotal));
-  txt('kpi-desp-s',Object.keys(fd.cats).length+' categorias');
-  el('kpi-saldo').textContent=fmt(saldo);
-  el('kpi-saldo').style.color=saldo>=0?'var(--green)':'var(--red)';
-  txt('kpi-saldo-s','Taxa: '+pctFmt(poup));
-  txt('kpi-poup',pctFmt(poup));
-  html('kpi-poup-badge','<span class="delta '+(poup>=0.2?'du':'dd')+'">'+(poup>=0.2?'✅ Meta atingida':'⚠ Abaixo de 20%')+'</span>');
+// ── UPDATE ALL ────────────────────────────────────────────────────────────────
+function updateAll(){
+  var fd = getFlowForMonth(selMonth);
+  var bd = getBalForMonth(selMonth);
+  var md = getMetasForMonth(selMonth);
+  updateFluxo(fd);
+  updateBalanca(bd);
+  updatePerfil(fd);
+  updateMetas(md);
+}
 
-  var ok=comp<=lc;
+// ══ FLUXO ════════════════════════════════════════════════════════════════════
+function updateFluxo(fd){
+  var rec = fd.receita;
+  var despTotal = Object.values(fd.cats).reduce(function(s,c){return s+c.total;},0);
+  var saldo = rec + despTotal;
+  var poupanca = saldo/rec;
+  var faixa = faixaRenda(rec);
+  var comp = Math.abs(despTotal)/rec;
+
+  // KPI cards
+  txt('kpi-rec', fmt(rec));
+  txt('kpi-rec-s', selMonth==='Todos'?'Ano completo 2026':selMonth+' 2026');
+  txt('kpi-desp', fmt(despTotal));
+  txt('kpi-desp-s', Object.keys(fd.cats).length+' categorias');
+  el('kpi-saldo').textContent = fmt(saldo);
+  el('kpi-saldo').style.color = saldo>=0?'var(--green)':'var(--red)';
+  txt('kpi-saldo-s', 'Taxa: '+pctFmt(poupanca));
+  txt('kpi-poup', pctFmt(poupanca));
+  html('kpi-poup-badge', '<span class="delta '+(poupanca>=0.2?'du':'dd')+'">'+(poupanca>=0.2?'✅ Meta atingida':'⚠ Abaixo de 20%')+'</span>');
+
+  // status block
+  var lc = limComp(faixa), lCL = limCL(faixa);
+  var ok = comp<=lc;
   html('status-block',
-    '<div class="sem '+(ok?'sg':'sr')+'"><span class="sdot '+(ok?'sdg':'sdr')+'"></span>Comprometimento: <strong>'+pctFmt(comp)+'</strong>'+(ok?' ✅':' — Acima do ideal')+'</div>'+
-    '<div class="sem sy"><span class="sdot sdy"></span>Faixa: <strong>'+faixa+'</strong> · Limite ideal: '+pctFmt(lc)+'</div>'+
-    '<div class="sem sg"><span class="sdot sdg"></span>Receita: <strong>'+fmt(rec)+'</strong> · Abril 2026</div>'
+    '<div class="sem '+(ok?'sg':'sr')+'"><span class="sdot '+(ok?'sdg':'sdr')+'"></span>Comprometimento: <strong>'+pctFmt(comp)+'</strong> '+(ok?'✅ OK':'— Acima do ideal')+'</div>'+
+    '<div class="sem sy"><span class="sdot sdy"></span>Faixa de Renda: <strong>'+faixa+'</strong> · Limite: '+pctFmt(lc)+'</div>'+
+    '<div class="sem sg"><span class="sdot sdg"></span>Receita: <strong>'+fmt(rec)+'</strong> · '+selMonth+'</div>'
   );
-  var pw=Math.min(99.5,comp*100).toFixed(1),sw=Math.max(0.5,poup*100).toFixed(1);
+
+  // dist block
+  var pw = Math.min(99.5,comp*100).toFixed(1);
+  var sw = Math.max(0.5,poupanca*100).toFixed(1);
   html('dist-block',
     '<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="color:var(--text2)">Despesas</span><span style="color:var(--red);font-weight:600">'+pctFmt(comp)+'</span></div>'+
     '<div class="po" style="height:8px"><div class="pi" style="width:'+pw+'%;background:linear-gradient(90deg,#ef4444,#dc2626)"></div></div>'+
-    '<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;margin-top:9px"><span style="color:var(--text2)">Poupança</span><span style="color:var(--green);font-weight:600">'+pctFmt(poup)+'</span></div>'+
+    '<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;margin-top:9px"><span style="color:var(--text2)">Poupança</span><span style="color:var(--green);font-weight:600">'+pctFmt(poupanca)+'</span></div>'+
     '<div class="po" style="height:8px"><div class="pi" style="width:'+sw+'%;background:linear-gradient(90deg,#10b981,#059669)"></div></div>'
   );
 
-  var sortedCats=Object.keys(fd.cats).sort(function(a,b){return fd.cats[a].total-fd.cats[b].total;});
-  var donutVals=sortedCats.map(function(c){return Math.abs(fd.cats[c].total);});
-  var donutColors=sortedCats.map(function(c){return CC[c]||'#64748b';});
-  txt('donut-cv',fmtK(Math.abs(despTotal)));
+  // donut
+  var sortedCats = Object.keys(fd.cats).sort(function(a,b){return fd.cats[a].total-fd.cats[b].total;});
+  var donutVals = sortedCats.map(function(c){return Math.abs(fd.cats[c].total);});
+  var donutColors = sortedCats.map(function(c){return CAT_COLORS[c]||'#64748b';});
+  txt('donut-center-v', fmtK(Math.abs(despTotal)));
 
-  var dEl=el('ch-donut');
-  if(dEl){
-    charts.donut=new Chart(dEl,{type:'doughnut',
-      data:{labels:sortedCats,datasets:[{data:donutVals,backgroundColor:donutColors,borderColor:'#0d1526',borderWidth:2,hoverOffset:7}]},
-      options:{responsive:true,maintainAspectRatio:true,aspectRatio:1,cutout:'66%',
-        plugins:{legend:{display:false},tooltip:{backgroundColor:'#0d1526',borderColor:'#1e2d4a',borderWidth:1,padding:9,
-          callbacks:{label:function(ctx){return ' '+ctx.label+': '+fmt(ctx.raw)+' ('+((ctx.raw/Math.abs(despTotal))*100).toFixed(1)+'%)';}}
-        }}
-      }
-    });
-    dEl.addEventListener('click',function(e){
-      var pts=charts.donut.getElementsAtEventForMode(e,'nearest',{intersect:true},true);
-      if(pts.length)openDrillFlow(sortedCats[pts[0].index]);
-    });
+  if(charts.donut){
+    charts.donut.data.labels = sortedCats;
+    charts.donut.data.datasets[0].data = donutVals;
+    charts.donut.data.datasets[0].backgroundColor = donutColors;
+    charts.donut.update();
+  }else{
+    var dEl=el('ch-donut');
+    if(dEl){
+      charts.donut = new Chart(dEl,{
+        type:'doughnut',
+        data:{labels:sortedCats,datasets:[{data:donutVals,backgroundColor:donutColors,borderColor:'#0d1526',borderWidth:2,hoverOffset:7}]},
+        options:{responsive:true,maintainAspectRatio:true,aspectRatio:1,cutout:'66%',
+          plugins:{legend:{display:false},tooltip:{backgroundColor:'#0d1526',borderColor:'#1e2d4a',borderWidth:1,padding:9,
+            callbacks:{label:function(ctx){return ' '+ctx.label+': '+fmt(ctx.raw)+' ('+((ctx.raw/Math.abs(despTotal))*100).toFixed(1)+'%)';}}}}}
+      });
+      dEl.addEventListener('click',function(e){
+        var pts=charts.donut.getElementsAtEventForMode(e,'nearest',{intersect:true},true);
+        if(pts.length){var cat=sortedCats[pts[0].index];openDrillFlow(cat,selMonth);}
+      });
+    }
   }
-  var legEl=el('leg-donut');
-  if(legEl){legEl.innerHTML='';sortedCats.forEach(function(c){var d=document.createElement('div');d.className='li';d.innerHTML='<div class="ld" style="background:'+(CC[c]||'#64748b')+'"></div><span>'+c+'</span>';legEl.appendChild(d);});}
+  // legend
+  var legEl=el('leg-donut'); if(legEl){legEl.innerHTML='';sortedCats.forEach(function(c){var d=document.createElement('div');d.className='li';d.innerHTML='<div class="ld" style="background:'+(CAT_COLORS[c]||'#64748b')+'"></div><span>'+c+'</span>';legEl.appendChild(d);});}
 
-  var barSorted=Object.keys(fd.cats).sort(function(a,b){return fd.cats[a].total-fd.cats[b].total;});
-  var bEl=el('ch-bar');
-  if(bEl){
-    charts.bar=new Chart(bEl,{type:'bar',
-      data:{labels:barSorted,datasets:[{label:'% Receita',data:barSorted.map(function(c){return+(Math.abs(fd.cats[c].total)/rec*100).toFixed(2);}),
-        backgroundColor:barSorted.map(function(c){return(CC[c]||'#64748b')+'cc';}),
-        borderColor:barSorted.map(function(c){return CC[c]||'#64748b';}),borderWidth:1,borderRadius:4,borderSkipped:false}]},
-      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
-        scales:{x:{grid:{color:'#1e2d4a'},ticks:{callback:function(v){return v+'%';}}},y:{grid:{display:false},ticks:{font:{size:10}}}},
-        plugins:{legend:{display:false},tooltip:{backgroundColor:'#0d1526',borderColor:'#1e2d4a',borderWidth:1,padding:9,
-          callbacks:{label:function(ctx){return ctx.raw.toFixed(2)+'% = '+fmt(Math.abs(fd.cats[barSorted[ctx.dataIndex]].total));}}
-        }}
-      }
-    });
-    bEl.addEventListener('click',function(e){
-      var pts=charts.bar.getElementsAtEventForMode(e,'nearest',{intersect:true},true);
-      if(pts.length)openDrillFlow(barSorted[pts[0].index]);
-    });
+  // bar chart
+  var barSorted = Object.keys(fd.cats).sort(function(a,b){return fd.cats[a].total-fd.cats[b].total;});
+  var barVals = barSorted.map(function(c){return +(Math.abs(fd.cats[c].total)/rec*100).toFixed(2);});
+  var barColors = barSorted.map(function(c){return (CAT_COLORS[c]||'#64748b')+'cc';});
+  var barBorders = barSorted.map(function(c){return CAT_COLORS[c]||'#64748b';});
+  if(charts.bar){
+    charts.bar.data.labels=barSorted;
+    charts.bar.data.datasets[0].data=barVals;
+    charts.bar.data.datasets[0].backgroundColor=barColors;
+    charts.bar.data.datasets[0].borderColor=barBorders;
+    charts.bar.update();
+  }else{
+    var bEl=el('ch-bar');
+    if(bEl){
+      charts.bar=new Chart(bEl,{type:'bar',data:{labels:barSorted,datasets:[{label:'% Receita',data:barVals,backgroundColor:barColors,borderColor:barBorders,borderWidth:1,borderRadius:4,borderSkipped:false}]},
+        options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+          scales:{x:{grid:{color:'#1e2d4a'},ticks:{callback:function(v){return v+'%';}}},y:{grid:{display:false},ticks:{font:{size:10}}}},
+          plugins:{legend:{display:false},tooltip:{backgroundColor:'#0d1526',borderColor:'#1e2d4a',borderWidth:1,padding:9,
+            callbacks:{label:function(ctx){return ctx.raw.toFixed(2)+'% = '+fmt(Math.abs(fd.cats[barSorted[ctx.dataIndex]].total));}}}}
+        }
+      });
+      bEl.addEventListener('click',function(e){
+        var pts=charts.bar.getElementsAtEventForMode(e,'nearest',{intersect:true},true);
+        if(pts.length){var cat=barSorted[pts[0].index];openDrillFlow(cat,selMonth);}
+      });
+    }
   }
 
-  var tbody=el('tbl-cat');
-  if(tbody){
+  // cat table
+  var tbody=el('tbl-cat'); if(tbody){
     tbody.innerHTML='';
     Object.keys(fd.cats).sort(function(a,b){return fd.cats[a].total-fd.cats[b].total;}).forEach(function(cat){
-      var tot=fd.cats[cat].total,p=Math.abs(tot)/rec,bw=(Math.abs(tot)/Math.abs(despTotal)*100).toFixed(1);
+      var total=fd.cats[cat].total;var p=Math.abs(total)/rec;var bw=(Math.abs(total)/Math.abs(despTotal)*100).toFixed(1);
       var tr=document.createElement('tr');tr.className='drill-row';
-      tr.innerHTML='<td><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:'+(CC[cat]||'#64748b')+';margin-right:5px;vertical-align:middle"></span>'+cat+'</td>'
-        +'<td class="vn">'+fmt(tot)+'</td><td class="vb">'+pctFmt(p)+'</td>'
-        +'<td><div class="po" style="height:5px"><div class="pi" style="width:'+bw+'%;background:'+(CC[cat]||'#64748b')+'"></div></div></td>';
-      tr.addEventListener('click',function(){openDrillFlow(cat);});
+      tr.innerHTML='<td><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:'+(CAT_COLORS[cat]||'#64748b')+';margin-right:5px;vertical-align:middle"></span>'+cat+'</td>'
+        +'<td class="vn">'+fmt(total)+'</td><td class="vb">'+pctFmt(p)+'</td>'
+        +'<td><div class="po" style="height:5px"><div class="pi" style="width:'+bw+'%;background:'+(CAT_COLORS[cat]||'#64748b')+'"></div></div></td>';
+      tr.addEventListener('click',function(){openDrillFlow(cat,selMonth);});
       tbody.appendChild(tr);
     });
   }
+
+  // trend chart
+  var tLabels=MONTHS.map(function(m){return m.substring(0,3);});
+  var tRec=MONTHS.map(function(m){return DATA.flow[m].receita;});
+  var tDesp=MONTHS.map(function(m){return Math.abs(Object.values(DATA.flow[m].cats).reduce(function(s,c){return s+c.total;},0));});
+  if(charts.trend){
+    charts.trend.data.datasets[0].data=tRec;
+    charts.trend.data.datasets[1].data=tDesp;
+    charts.trend.update();
+  }else{
+    var tEl=el('ch-trend');
+    if(tEl){
+      charts.trend=new Chart(tEl,{type:'bar',data:{labels:tLabels,datasets:[
+        {label:'Receita',data:tRec,backgroundColor:'rgba(59,130,246,.6)',borderColor:'#3b82f6',borderWidth:1,borderRadius:4,order:2},
+        {label:'Despesas',data:tDesp,backgroundColor:'rgba(239,68,68,.6)',borderColor:'#ef4444',borderWidth:1,borderRadius:4,order:2},
+        {label:'Saldo',type:'line',data:tRec.map(function(r,i){return r-tDesp[i];}),borderColor:'#10b981',borderWidth:2,pointRadius:3,pointBackgroundColor:'#10b981',fill:false,tension:.3,order:1}
+      ]},options:{responsive:true,maintainAspectRatio:false,
+        scales:{x:{grid:{color:'#1e2d4a'},ticks:{font:{size:10}}},y:{grid:{color:'#1e2d4a'},ticks:{callback:function(v){return 'R$'+Math.round(v/1000)+'k';}}}},
+        plugins:{legend:{position:'top',labels:{boxWidth:10,padding:12,font:{size:10}}},tooltip:{backgroundColor:'#0d1526',borderColor:'#1e2d4a',borderWidth:1,padding:9,callbacks:{label:function(ctx){return ' '+ctx.dataset.label+': '+fmt(ctx.raw);}}}}
+      }});
+    }
+  }
 }
 
-// ── BALANÇA ───────────────────────────────────────────────────────────────────
-function buildBalanca(){
-  var allAt=0,allPa=0;
-  Object.values(bd).forEach(function(c){allAt+=c.ativos;allPa+=c.passivos;});
-  var pat=allAt+allPa, solidez=allAt>0?pat/allAt:0;
-  var metaR=md['Reserva de emergência'].meta;
-  var resAt=(bd['Reserva de emergência']||{ativos:0,passivos:0});
-  var resVal=resAt.ativos+resAt.passivos;
-  var pctR=resVal/metaR;
+// ══ BALANÇA ══════════════════════════════════════════════════════════════════
+function updateBalanca(bd){
+  var allAtivos=0, allPassivos=0;
+  Object.values(bd).forEach(function(cat){allAtivos+=cat.ativos;allPassivos+=cat.passivos;});
+  var pat=allAtivos+allPassivos;
+  var solidez=allAtivos>0?pat/allAtivos:0;
+  var metaReserva=DATA.metas['Reserva de emergência']||200000;
+  var reservaCat=bd['Reserva de emergência']||{ativos:0,passivos:0};
+  var reservaAtual=reservaCat.ativos+reservaCat.passivos;
+  var pctReserva=reservaAtual/metaReserva;
 
-  txt('bal-ativos',fmt(allAt));
-  txt('bal-ativos-s','Imóvel + Veículo + RF + Reserva');
-  txt('bal-passivos',fmt(allPa));
+  txt('bal-ativos',fmt(allAtivos));
+  txt('bal-ativos-s','Imóvel+Veículo+RF+RV+Reserva');
+  txt('bal-passivos',fmt(allPassivos));
   el('bal-pat').textContent=fmt(pat);
   el('bal-pat').style.color=pat>=0?'var(--green)':'var(--red)';
   html('bal-pat-badge','<span class="delta '+(pat>=0?'du':'dd')+'">'+(pat>=0?'🟢 Positivo':'🔴 Negativo')+'</span>');
   txt('bal-solidez',pctFmt(solidez));
-  html('bal-solidez-badge','<span class="delta '+(solidez>=0.31?'du':'dn')+'">'+(solidez>=0.61?'🟢 Sólido':solidez>=0.31?'🟡 Moderado':solidez>=0.01?'🟠 Frágil':'🔴 Crítico')+'</span>');
+  var solOk=solidez>=0.31;
+  html('bal-solidez-badge','<span class="delta '+(solOk?'du':'dn')+'">'+(solidez>=0.61?'🟢 Sólido':solidez>=0.31?'🟡 Moderado':solidez>=0.01?'🟠 Frágil':'🔴 Crítico')+'</span>');
 
-  var semP=pat>10000?'sg':pat>0?'sy':'sr';
-  var semPd=pat>10000?'sdg':pat>0?'sdy':'sdr';
-  var semPe=pat>10000?'🟢':pat>0?'🟡':'🔴';
-  var semS=solidez>=0.31?'sg':solidez>=0.01?'so':'sr';
-  var semSd=solidez>=0.31?'sdg':'sdr';
-  var idx=allAt>0?allPa/allAt:0;
-  var semI=idx>-0.55?'sg':idx>-0.80?'sy':'sr';
-  var semId=idx>-0.55?'sdg':'sdr';
+  // semaforos
+  var semPat = pat>10000?'sg':pat>0?'sy':'sr';
+  var semPatDot = pat>10000?'sdg':pat>0?'sdy':'sdr';
+  var semPatEmoji = pat>10000?'🟢':pat>0?'🟡':'🔴';
+  var idxVal = allAtivos>0?allPassivos/allAtivos:0;
+  var semSol = solidez>=0.31?'sg':solidez>=0.01?'so':'sr';
+  var semSolDot = solidez>=0.31?'sdg':'sdr';
+  var semIdx = idxVal>-0.55?'sg':idxVal>-0.80?'sy':'sr';
+  var semIdxDot = idxVal>-0.55?'sdg':'sdr';
   html('bal-semaforos',
-    '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px"><span style="font-size:11px;color:var(--text2)">Saldo Patrimonial</span><div class="sem '+semP+'" style="padding:3px 10px;font-size:10px"><span class="sdot '+semPd+'"></span>'+semPe+' '+fmt(pat)+'</div></div>'+
-    '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px"><span style="font-size:11px;color:var(--text2)">Solidez (Pat/Ativos)</span><div class="sem '+semS+'" style="padding:3px 10px;font-size:10px"><span class="sdot '+semSd+'"></span>'+pctFmt(solidez)+'</div></div>'+
-    '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px"><span style="font-size:11px;color:var(--text2)">Índice Pass/Ativos</span><div class="sem '+semI+'" style="padding:3px 10px;font-size:10px"><span class="sdot '+semId+'"></span>'+pctFmt(idx)+'</div></div>'
+    '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px"><span style="font-size:11px;color:var(--text2)">Saldo Patrimonial</span><div class="sem '+semPat+'" style="padding:3px 10px;font-size:10px"><span class="sdot '+semPatDot+'"></span>'+semPatEmoji+' '+fmt(pat)+'</div></div>'+
+    '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px"><span style="font-size:11px;color:var(--text2)">Solidez (Pat/Ativos)</span><div class="sem '+semSol+'" style="padding:3px 10px;font-size:10px"><span class="sdot '+semSolDot+'"></span>'+pctFmt(solidez)+'</div></div>'+
+    '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px"><span style="font-size:11px;color:var(--text2)">Índice Pass/Ativos</span><div class="sem '+semIdx+'" style="padding:3px 10px;font-size:10px"><span class="sdot '+semIdxDot+'"></span>'+pctFmt(idxVal)+'</div></div>'
   );
 
-  var pr=Math.min(1,Math.max(0,pctR));
-  var gpEl=el('g-prog'),gnEl=el('g-needle'),gBarEl=el('g-bar'),gTxtEl=el('g-pct-txt');
-  if(gpEl){gpEl.setAttribute('stroke-dasharray',(pr*283).toFixed(1)+' 283');}
-  if(gnEl){var ang=-Math.PI+(pr*Math.PI),cx=105,cy=105,r=80;gnEl.setAttribute('x2',(cx+r*Math.cos(ang)).toFixed(1));gnEl.setAttribute('y2',(cy+r*Math.sin(ang)).toFixed(1));}
-  if(gBarEl) gBarEl.style.width=(pr*100).toFixed(1)+'%';
-  if(gTxtEl){gTxtEl.textContent=pctFmt(pctR);gTxtEl.style.color=pr>=0.8?'var(--green)':pr>=0.4?'var(--amber)':'var(--red)';}
+  // gauge
+  var gpEl=el('g-prog'), gnEl=el('g-needle'), gBarEl=el('g-bar'), gTxtEl=el('g-pct-txt');
+  var pr=Math.min(1,Math.max(0,pctReserva));
+  if(gpEl){var total=283;gpEl.setAttribute('stroke-dasharray',(pr*total).toFixed(1)+' '+total);}
+  if(gnEl){
+    var ang=-Math.PI+(pr*Math.PI),cx=105,cy=105,r=80;
+    gnEl.setAttribute('x2',(cx+r*Math.cos(ang)).toFixed(1));
+    gnEl.setAttribute('y2',(cy+r*Math.sin(ang)).toFixed(1));
+  }
+  if(gBarEl) gBarEl.style.width=(Math.min(100,pr*100)).toFixed(1)+'%';
+  if(gTxtEl){gTxtEl.textContent=pctFmt(pctReserva);gTxtEl.style.color=pr>=0.8?'var(--green)':pr>=0.4?'var(--amber)':'var(--red)';}
 
-  var falta=Math.max(0,metaR-resVal);
+  // reserva detail cards
+  var falta=Math.max(0,metaReserva-reservaAtual);
   html('reserva-cards',
-    '<div style="text-align:center;padding:8px;background:var(--bg3);border-radius:7px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;margin-bottom:2px">Atual</div><div style="font-size:14px;font-weight:700;color:var(--blue)">'+fmt(resVal)+'</div></div>'+
-    '<div style="text-align:center;padding:8px;background:var(--bg3);border-radius:7px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;margin-bottom:2px">Meta</div><div style="font-size:14px;font-weight:700">'+fmt(metaR)+'</div></div>'+
+    '<div style="text-align:center;padding:8px;background:var(--bg3);border-radius:7px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;margin-bottom:2px">Atual</div><div style="font-size:14px;font-weight:700;color:var(--blue)">'+fmt(reservaAtual)+'</div></div>'+
+    '<div style="text-align:center;padding:8px;background:var(--bg3);border-radius:7px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;margin-bottom:2px">Meta</div><div style="font-size:14px;font-weight:700">'+fmt(metaReserva)+'</div></div>'+
     '<div style="text-align:center;padding:8px;background:var(--bg3);border-radius:7px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;margin-bottom:2px">Falta</div><div style="font-size:14px;font-weight:700;color:var(--red)">'+fmt(falta)+'</div></div>'+
-    '<div style="text-align:center;padding:8px;background:var(--bg3);border-radius:7px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;margin-bottom:2px">% Meta</div><div style="font-size:14px;font-weight:700;color:'+(pr>=0.8?'var(--green)':pr>=0.4?'var(--amber)':'var(--red)')+'">'+pctFmt(pctR)+'</div></div>'
+    '<div style="text-align:center;padding:8px;background:var(--bg3);border-radius:7px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;margin-bottom:2px">% Meta</div><div style="font-size:14px;font-weight:700;color:'+(pr>=0.8?'var(--green)':pr>=0.4?'var(--amber)':'var(--red)')+'">'+pctFmt(pctReserva)+'</div></div>'
   );
 
-  var patList=el('pat-list');
-  if(patList){
+  // patrimonial list
+  var patList=el('pat-list'); if(patList){
     patList.innerHTML='';
-    var maxAbs=Math.max.apply(null,Object.values(bd).map(function(c){return Math.abs(c.ativos)+Math.abs(c.passivos);}));
-    Object.keys(bd).forEach(function(cat){
-      var c=bd[cat],net=c.ativos+c.passivos;
+    var catKeys=Object.keys(bd);
+    var maxAbs=Math.max.apply(null,catKeys.map(function(k){return Math.abs(bd[k].ativos)+Math.abs(bd[k].passivos);}));
+    catKeys.forEach(function(cat){
+      var c=bd[cat];var net=c.ativos+c.passivos;
       var bw=((Math.abs(c.ativos)+Math.abs(c.passivos))/maxAbs*100).toFixed(1);
-      var col=BC[cat.trim()]||'#3b82f6';
+      var catClean=cat.trim();var col=BAL_COLORS[catClean]||BAL_COLORS[cat.trim()]||'#3b82f6';
       var div=document.createElement('div');div.className='pr';
-      div.innerHTML='<div class="pt"><div><div class="pc2">'+cat+' <span style="color:var(--blue);font-size:11px">›</span></div>'
-        +'<div class="pt2">Ativos: '+fmt(c.ativos)+(c.passivos?' · Passivos: '+fmt(c.passivos):'')+'</div></div>'
+      div.innerHTML='<div class="pt"><div><div class="pc2">'+catClean+' <span style="color:var(--blue);font-size:11px">›</span></div><div class="pt2">Ativos: '+fmt(c.ativos)+(c.passivos?' · Passivos: '+fmt(c.passivos):'')+'</div></div>'
         +'<div style="font-family:var(--mono);font-size:12px;font-weight:500;color:'+(net>=0?'var(--green)':'var(--red)')+'">'+fmt(net)+'</div></div>'
         +'<div class="po" style="height:3px"><div class="pi" style="width:'+bw+'%;background:'+col+'"></div></div>';
-      div.addEventListener('click',function(){openDrillBal(cat,col,c);});
+      div.addEventListener('click',function(){openDrillBal(catClean,col,c);});
       patList.appendChild(div);
     });
   }
 
+  // pat chart
   var balCats=Object.keys(bd).map(function(k){return k.trim();});
-  var pEl=el('ch-pat');
-  if(pEl){
-    charts.pat=new Chart(pEl,{type:'bar',
-      data:{labels:balCats,datasets:[
-        {label:'Ativos',data:Object.values(bd).map(function(c){return c.ativos;}),backgroundColor:'rgba(59,130,246,.65)',borderColor:'#3b82f6',borderWidth:1,borderRadius:4},
-        {label:'Passivos',data:Object.values(bd).map(function(c){return Math.abs(c.passivos);}),backgroundColor:'rgba(239,68,68,.65)',borderColor:'#ef4444',borderWidth:1,borderRadius:4}
-      ]},
-      options:{responsive:true,maintainAspectRatio:false,
+  var balAtArr=Object.values(bd).map(function(c){return c.ativos;});
+  var balPaArr=Object.values(bd).map(function(c){return Math.abs(c.passivos);});
+  if(charts.pat){
+    charts.pat.data.labels=balCats;
+    charts.pat.data.datasets[0].data=balAtArr;
+    charts.pat.data.datasets[1].data=balPaArr;
+    charts.pat.update();
+  }else{
+    var pEl=el('ch-pat');
+    if(pEl){
+      charts.pat=new Chart(pEl,{type:'bar',data:{labels:balCats,datasets:[
+        {label:'Ativos',data:balAtArr,backgroundColor:'rgba(59,130,246,.65)',borderColor:'#3b82f6',borderWidth:1,borderRadius:4},
+        {label:'Passivos',data:balPaArr,backgroundColor:'rgba(239,68,68,.65)',borderColor:'#ef4444',borderWidth:1,borderRadius:4}
+      ]},options:{responsive:true,maintainAspectRatio:false,
         scales:{x:{grid:{color:'#1e2d4a'},ticks:{font:{size:9}}},y:{grid:{color:'#1e2d4a'},ticks:{callback:function(v){return 'R$'+Math.round(v/1000)+'k';}}}},
         plugins:{legend:{position:'top',labels:{boxWidth:9,padding:10,font:{size:10}}},tooltip:{backgroundColor:'#0d1526',borderColor:'#1e2d4a',borderWidth:1,padding:9,callbacks:{label:function(ctx){return ctx.dataset.label+': '+fmt(ctx.raw);}}}}
-      }
-    });
+      }});
+    }
+  }
+
+  // ── Patrimônio timeline (always full year) ─────────────────────────────────
+  var ptLabels = MONTHS.map(function(m){return m.substring(0,3);});
+  var ptAtivos  = MONTHS.map(function(m){
+    return Object.values(DATA.balByMonth[m]).reduce(function(s,c){return s+c.ativos;},0);
+  });
+  var ptPassivos = MONTHS.map(function(m){
+    return Math.abs(Object.values(DATA.balByMonth[m]).reduce(function(s,c){return s+c.passivos;},0));
+  });
+  var ptPat = MONTHS.map(function(m){
+    var bd2=DATA.balByMonth[m];
+    var at=Object.values(bd2).reduce(function(s,c){return s+c.ativos;},0);
+    var pa=Object.values(bd2).reduce(function(s,c){return s+c.passivos;},0);
+    return at+pa;
+  });
+  if(charts.patTrend){
+    charts.patTrend.data.datasets[0].data = ptAtivos;
+    charts.patTrend.data.datasets[1].data = ptPassivos;
+    charts.patTrend.data.datasets[2].data = ptPat;
+    charts.patTrend.update();
+  }else{
+    var ptEl=el('ch-pat-trend');
+    if(ptEl){
+      charts.patTrend=new Chart(ptEl,{
+        type:'bar',
+        data:{
+          labels:ptLabels,
+          datasets:[
+            {label:'Ativos',    data:ptAtivos,   backgroundColor:'rgba(59,130,246,.6)', borderColor:'#3b82f6',borderWidth:1,borderRadius:4,order:2},
+            {label:'Passivos',  data:ptPassivos, backgroundColor:'rgba(239,68,68,.6)',  borderColor:'#ef4444',borderWidth:1,borderRadius:4,order:2},
+            {label:'Patrimônio Líquido',type:'line',data:ptPat,
+              borderColor:'#10b981',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#10b981',
+              pointBorderColor:'#0d1526',pointBorderWidth:1.5,fill:false,tension:0.35,order:1}
+          ]
+        },
+        options:{
+          responsive:true,maintainAspectRatio:false,
+          scales:{
+            x:{grid:{color:'#1e2d4a'},ticks:{font:{size:10}}},
+            y:{grid:{color:'#1e2d4a'},ticks:{callback:function(v){
+              var a=Math.abs(v);
+              return (v<0?'-':'')+'R$'+(a>=1000?Math.round(a/1000)+'k':a);
+            }}}
+          },
+          plugins:{
+            legend:{position:'top',labels:{boxWidth:10,padding:12,font:{size:10}}},
+            tooltip:{
+              backgroundColor:'#0d1526',borderColor:'#1e2d4a',borderWidth:1,padding:9,
+              callbacks:{label:function(ctx){return ' '+ctx.dataset.label+': '+fmt(ctx.raw);}}
+            }
+          }
+        }
+      });
+    }
   }
 }
 
-// ── PERFIL ────────────────────────────────────────────────────────────────────
-function buildPerfil(){
+// ══ PERFIL ════════════════════════════════════════════════════════════════════
+function updatePerfil(fd){
   var rec=fd.receita;
   var despTotal=Object.values(fd.cats).reduce(function(s,c){return s+c.total;},0);
-  var faixa=faixaRenda(rec),comp=Math.abs(despTotal)/rec;
-  var lc=limC(faixa),lcl=limCL(faixa),sr=scoreR(faixa);
+  var faixa=faixaRenda(rec);
+  var comp=Math.abs(despTotal)/rec;
+  var lc=limComp(faixa), lCL=limCL(faixa);
+  var srend=scoreRenda(faixa);
+
+  // classify CL
   var clMon=0,clBas=0;
   Object.keys(fd.cats).forEach(function(cat){
-    var p=Math.abs(fd.cats[cat].total)/rec,cl=classify(cat,p,faixa);
-    if(cl.lbl==='Conforto'||cl.lbl==='Lifestyle')clMon+=Math.abs(fd.cats[cat].total);
-    else if(cl.lbl==='Básico')clBas+=Math.abs(fd.cats[cat].total);
+    var p=Math.abs(fd.cats[cat].total)/rec;
+    var cl=classify(cat,p,faixa);
+    if(cl.lbl==='Conforto'||cl.lbl==='Lifestyle') clMon+=Math.abs(fd.cats[cat].total);
+    else if(cl.lbl==='Básico') clBas+=Math.abs(fd.cats[cat].total);
   });
-  var pctCL=clMon/rec,pctBas=clBas/rec;
-  var estilo=estiloVida(pctCL),sg=estilo.s,gap=sg-sr;
+  var pctCL=clMon/rec, pctBas=clBas/rec;
+  var estilo=estiloVida(pctCL);
+  var sgastos=estilo.score;
+  var gap=sgastos-srend;
+
   var enquad;
-  if(comp<=lc&&pctCL<=lcl)enquad={txt:'🟢 Enquadrado',cls:'eq-g',desc:'Comprometimento e estilo de vida dentro dos limites para '+faixa+'.'};
-  else if(comp>lc&&pctCL<=lcl)enquad={txt:'🔴 Desenquadramento Estrutural',cls:'eq-r',desc:'Comprometimento geral ('+pctFmt(comp)+') acima do limite ('+pctFmt(lc)+'). O estilo de vida está controlado, mas a estrutura de despesas é pesada.'};
-  else if(comp<=lc&&pctCL>lcl)enquad={txt:'🔴 Desenquadramento de Estilo',cls:'eq-r',desc:'Total ok, mas Conforto/Lifestyle ('+pctFmt(pctCL)+') acima do limite ('+pctFmt(lcl)+').'};
+  if(comp<=lc && pctCL<=lCL) enquad={txt:'🟢 Enquadrado',cls:'eq-g',desc:'Comprometimento geral e estilo de vida dentro dos limites para '+faixa+'.'};
+  else if(comp>lc && pctCL<=lCL) enquad={txt:'🔴 Desenquadramento Estrutural',cls:'eq-r',desc:'Comprometimento geral ('+pctFmt(comp)+') acima do limite ('+pctFmt(lc)+'). O estilo de vida está controlado, mas a estrutura de despesas é pesada.'};
+  else if(comp<=lc && pctCL>lCL) enquad={txt:'🔴 Desenquadramento de Estilo',cls:'eq-r',desc:'Total ok, mas gastos de Conforto/Lifestyle ('+pctFmt(pctCL)+') acima do limite ('+pctFmt(lCL)+') para '+faixa+'.'};
   else enquad={txt:'🔴 Desenquadramento Geral',cls:'eq-r',desc:'Comprometimento geral e estilo de vida acima dos limites.'};
 
+  // cards
   html('perfil-cards',
     '<div class="card" style="border-color:rgba(139,92,246,.35);background:rgba(139,92,246,.06)"><div class="cl">Faixa de Renda</div><div class="cv" style="color:var(--violet)">'+faixa+'</div><div class="cs">'+fmt(rec)+' / mês</div></div>'+
     '<div class="card" style="border-color:rgba(59,130,246,.35);background:var(--blue-s)"><div class="cl">Estilo de Vida</div><div class="cv" style="color:var(--blue)">'+estilo.lbl+'</div><div class="cs">%CL = '+pctFmt(pctCL)+'</div></div>'+
-    '<div class="card" style="border-color:rgba('+(comp<=lc?'16,185,129':'239,68,68')+',.35);background:'+(comp<=lc?'var(--green-s)':'var(--red-s)')+'"><div class="cl">Enquadramento</div><div class="cv" style="font-size:15px;color:'+(comp<=lc?'var(--green)':'var(--red)')+'">'+enquad.txt.replace(/[🟢🔴]/g,'').trim()+'</div><div class="cs">'+(comp<=lc?'✅ Dentro':'⚠ Fora')+' do limite</div></div>'+
-    '<div class="card" style="border-color:rgba('+(gap<=0?'16,185,129':'239,68,68')+',.35);background:'+(gap<=0?'var(--green-s)':'var(--red-s)')+'"><div class="cl">Gap Score</div><div class="cv" style="color:'+(gap<=0?'var(--green)':'var(--red)')+'">'+(gap>0?'+':'')+gap+'</div><div class="cs">'+(gap<=0?'Gasto abaixo da renda':'Gasto acima da renda')+'</div></div>'
+    '<div class="card" style="border-color:rgba(239,68,68,.35);background:var(--red-s)"><div class="cl">Enquadramento</div><div class="cv" style="font-size:15px;color:'+(comp<=lc?'var(--green)':'var(--red)')+'">'+enquad.txt.replace(/[🟢🔴]/g,'').trim()+'</div><div class="cs">'+(comp<=lc?'✅ Dentro':'⚠ Fora')+' do limite</div></div>'+
+    '<div class="card" style="border-color:rgba('+(gap<0?'16,185,129':'239,68,68')+',.35);background:'+(gap<0?'var(--green-s)':'var(--red-s)')+'"><div class="cl">Gap Score</div><div class="cv" style="color:'+(gap<0?'var(--green)':'var(--red)')+'">'+(gap<0?gap:'+'+gap)+'</div><div class="cs">'+(gap<0?'Gasto abaixo da renda':'Gasto acima da renda')+'</div></div>'
   );
 
+  // score row
   html('score-row',
-    '<div class="sb"><div class="sn" style="color:var(--violet)">'+sr+'</div><div class="sl">Score Renda</div><div style="font-size:10px;color:var(--text2);margin-top:3px">'+faixa+'</div></div>'+
+    '<div class="sb"><div class="sn" style="color:var(--violet)">'+srend+'</div><div class="sl">Score Renda</div><div style="font-size:10px;color:var(--text2);margin-top:3px">'+faixa+'</div></div>'+
     '<div class="sa">→</div>'+
     '<div class="sg2"><div class="sn" style="color:'+(gap<=0?'var(--green)':'var(--red)')+'">'+(gap>0?'+':'')+gap+'</div><div class="sl" style="color:'+(gap<=0?'var(--green)':'var(--red)')+'">Gap</div><div class="sem '+(gap<=0?'sg':'sr')+'" style="padding:2px 7px;font-size:9px;margin-top:5px;justify-content:center"><span class="sdot '+(gap<=0?'sdg':'sdr')+'"></span>'+(gap<=0?'Saudável':'Atenção')+'</div></div>'+
     '<div class="sa">←</div>'+
-    '<div class="sb"><div class="sn" style="color:var(--blue)">'+sg+'</div><div class="sl">Score Gastos</div><div style="font-size:10px;color:var(--text2);margin-top:3px">'+estilo.lbl+'</div></div>'
+    '<div class="sb"><div class="sn" style="color:var(--blue)">'+sgastos+'</div><div class="sl">Score Gastos</div><div style="font-size:10px;color:var(--text2);margin-top:3px">'+estilo.lbl+'</div></div>'
   );
+
+  // enquadramento
   html('enquad-block','<div class="eq '+enquad.cls+'"><div class="et" style="color:'+(comp<=lc?'var(--green)':'var(--red)')+'">'+enquad.txt+'</div><div class="es">'+enquad.desc+'</div></div>');
 
-  var clPw=(pctCL/lcl*100).toFixed(1);
+  // CL block
+  var clPw=(pctCL/lCL*100).toFixed(1);var basPw=(pctBas/0.50*100).toFixed(1);
   html('cl-block',
     '<div style="margin-top:9px">'+
     '<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="color:var(--text2)">Conforto / Lifestyle</span><span style="color:var(--amber);font-weight:600">'+pctFmt(pctCL)+'</span></div>'+
     '<div class="po" style="height:9px"><div class="pi" style="width:'+Math.min(100,+clPw)+'%;background:linear-gradient(90deg,var(--amber),#d97706)"></div></div>'+
-    '<div style="font-size:10px;color:var(--text3);margin-top:2px">Limite '+faixa+': '+pctFmt(lcl)+' '+(pctCL<=lcl?'✅':'⚠ acima')+'</div>'+
+    '<div style="font-size:10px;color:var(--text3);margin-top:2px">Limite '+faixa+': '+pctFmt(lCL)+' '+(pctCL<=lCL?'✅':'⚠ acima')+'</div>'+
     '<div style="margin-top:11px;display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="color:var(--text2)">Básico</span><span style="color:var(--blue);font-weight:600">'+pctFmt(pctBas)+'</span></div>'+
-    '<div class="po" style="height:9px"><div class="pi" style="width:'+Math.min(100,(pctBas/0.50*100))+'%;background:linear-gradient(90deg,var(--blue),#1d4ed8)"></div></div>'+
+    '<div class="po" style="height:9px"><div class="pi" style="width:'+Math.min(100,+basPw)+'%;background:linear-gradient(90deg,var(--blue),#1d4ed8)"></div></div>'+
     '<div class="hr"></div>'+
-    '<div class="sh">Semáforos de Estilo</div>'+
+    '<div class="sh">Semáforos</div>'+
     '<div style="display:flex;flex-direction:column;gap:5px;margin-top:5px">'+
-    '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px"><span style="font-size:11px;color:var(--text2)">Conforto/Lifestyle (&lt;'+pctFmt(lcl)+')</span><div class="sem '+(pctCL<=lcl?'sg':'sr')+'" style="padding:3px 9px;font-size:10px"><span class="sdot '+(pctCL<=lcl?'sdg':'sdr')+'"></span>'+(pctCL<=lcl?'🟢':'🔴')+' '+pctFmt(pctCL)+'</div></div>'+
+    '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px"><span style="font-size:11px;color:var(--text2)">Conforto/Lifestyle (&lt;'+pctFmt(lCL)+')</span><div class="sem '+(pctCL<=lCL?'sg':'sr')+'" style="padding:3px 9px;font-size:10px"><span class="sdot '+(pctCL<=lCL?'sdg':'sdr')+'"></span>'+(pctCL<=lCL?'🟢':'🔴')+' '+pctFmt(pctCL)+'</div></div>'+
     '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px"><span style="font-size:11px;color:var(--text2)">Comprometimento (&lt;'+pctFmt(lc)+')</span><div class="sem '+(comp<=lc?'sg':'sr')+'" style="padding:3px 9px;font-size:10px"><span class="sdot '+(comp<=lc?'sdg':'sdr')+'"></span>'+(comp<=lc?'🟢':'🔴')+' '+pctFmt(comp)+'</div></div>'+
     '</div></div>'
   );
 
-  var tbl=el('tbl-perfil');
-  if(tbl){
+  // perfil table
+  var tbl=el('tbl-perfil'); if(tbl){
     tbl.innerHTML='';
-    Object.keys(CL).forEach(function(cat){
+    Object.keys(CLASS_LIMITS).forEach(function(cat){
       if(!fd.cats[cat])return;
-      var tot=fd.cats[cat].total,p=Math.abs(tot)/rec,cl=classify(cat,p,faixa);
-      var lAll2=CL[cat];var lm=(faixa&&lAll2&&lAll2[faixa])?lAll2[faixa]:lAll2.b!=null?lAll2:(lAll2['Afluente']||lAll2);
+      var total=fd.cats[cat].total;var p=Math.abs(total)/rec;
+      var cl=classify(cat,p,faixa);var lAll2=CLASS_LIMITS[cat];var lm=(faixa&&lAll2&&lAll2[faixa])?lAll2[faixa]:lAll2.b!=null?lAll2:(lAll2['Afluente']||lAll2);
       var tr=document.createElement('tr');tr.className='drill-row';
-      tr.innerHTML='<td>'+cat+'</td><td class="vn">'+fmt(tot)+'</td><td class="vb">'+pctFmt(p)+'</td>'
+      tr.innerHTML='<td>'+cat+'</td><td class="vn">'+fmt(total)+'</td><td class="vb">'+pctFmt(p)+'</td>'
         +'<td style="font-family:var(--mono);font-size:10px">≤'+(lm.b*100).toFixed(0)+'%</td>'
         +'<td style="font-family:var(--mono);font-size:10px">≤'+(lm.c*100).toFixed(0)+'%</td>'
         +'<td>'+(cl.cls?'<span class="'+cl.cls+'">'+cl.lbl+'</span>':cl.lbl)+'</td>';
-      tr.addEventListener('click',function(){openDrillFlow(cat);});
+      tr.addEventListener('click',function(){openDrillFlow(cat,selMonth);});
       tbl.appendChild(tr);
     });
   }
 
-  var rcats=Object.keys(CL);
-  var rEl=el('ch-radar');
-  if(rEl){
-    charts.radar=new Chart(rEl,{type:'radar',
-      data:{labels:rcats,datasets:[
-        {label:'Atual (%)',data:rcats.map(function(n){return fd.cats[n]?+(Math.abs(fd.cats[n].total)/rec*100).toFixed(2):0;}),backgroundColor:'rgba(59,130,246,.15)',borderColor:'#3b82f6',borderWidth:2,pointBackgroundColor:'#3b82f6',pointRadius:3},
-        {label:'Limite Conforto (%)',data:rcats.map(function(n){return+(CL[n].c*100).toFixed(0);}),backgroundColor:'rgba(245,158,11,.06)',borderColor:'#f59e0b',borderWidth:1,borderDash:[4,4],pointRadius:2}
-      ]},
-      options:{responsive:true,maintainAspectRatio:false,scales:{r:{grid:{color:'#1e2d4a'},ticks:{backdropColor:'transparent',color:'#4d6a94',font:{size:8}},pointLabels:{color:'#8ba3c7',font:{size:10}}}},
+  // radar
+  var rcats=Object.keys(CLASS_LIMITS);
+  var rVals=rcats.map(function(cat){return fd.cats[cat]?+(Math.abs(fd.cats[cat].total)/rec*100).toFixed(2):0;});
+  var rLims=rcats.map(function(cat){var l=limitesDe(cat,faixa);return l?+(l.c*100).toFixed(0):0;});
+  if(charts.radar){
+    charts.radar.data.labels=rcats;
+    charts.radar.data.datasets[0].data=rVals;
+    charts.radar.data.datasets[1].data=rLims;
+    charts.radar.update();
+  }else{
+    var rEl=el('ch-radar');
+    if(rEl){
+      charts.radar=new Chart(rEl,{type:'radar',data:{labels:rcats,datasets:[
+        {label:'Atual (%)',data:rVals,backgroundColor:'rgba(59,130,246,.15)',borderColor:'#3b82f6',borderWidth:2,pointBackgroundColor:'#3b82f6',pointRadius:3},
+        {label:'Limite Conforto (%)',data:rLims,backgroundColor:'rgba(245,158,11,.06)',borderColor:'#f59e0b',borderWidth:1,borderDash:[4,4],pointRadius:2}
+      ]},options:{responsive:true,maintainAspectRatio:false,
+        scales:{r:{grid:{color:'#1e2d4a'},ticks:{backdropColor:'transparent',color:'#4d6a94',font:{size:8}},pointLabels:{color:'#8ba3c7',font:{size:10}}}},
         plugins:{legend:{position:'top',labels:{boxWidth:9,padding:10,font:{size:10}}},tooltip:{backgroundColor:'#0d1526',borderColor:'#1e2d4a',borderWidth:1,padding:9}}
-      }
-    });
+      }});
+    }
   }
 }
 
-// ── METAS ─────────────────────────────────────────────────────────────────────
-function buildMetas(){
-  function metaCard(nome,prazo,cls,realizado,meta){
-    var p=meta>0?realizado/meta:0,pw=Math.min(100,p*100).toFixed(1);
-    var falta=Math.max(0,meta-realizado);
+// ══ METAS ═════════════════════════════════════════════════════════════════════
+function updateMetas(md){
+  var metas=DATA.metas;var real=md.realizados;
+  var categories=['Curto','Médio','Longo','Reserva de emergência','Imóvel residencial'];
+  var prazoColors={'Curto':'mb-c','Médio':'mb-m','Longo':{cls:'mb-l',badge:'Longo'}};
+  var balMes=getBalForMonth(selMonth);
+  var reservaAtual=(balMes['Reserva de emergência']||{ativos:0,passivos:0});
+  var reservaVal=reservaAtual.ativos+reservaAtual.passivos;
+  var imovelCat=balMes['Imóvel residencial']||{ativos:0,passivos:0};
+  var imovelPat=imovelCat.ativos+imovelCat.passivos;
+
+  function metaCard(cat,label,prazo,color,realizado,meta){
+    var p=meta>0?realizado/meta:0;
+    var pw=Math.min(100,p*100).toFixed(1);
+    var faltaV=Math.max(0,meta-realizado);
     return '<div class="mc">'+
-      '<div class="mh"><div class="mt2">'+nome+'</div><span class="mb2 '+cls+'">'+prazo+'</span></div>'+
+      '<div class="mh"><div class="mt2">'+label+'</div><span class="mb2 '+color+'">'+prazo+'</span></div>'+
       '<div class="mv">'+
       '<div class="mi"><div class="ml">Meta</div><div class="mv2">'+fmtK(meta)+'</div></div>'+
       '<div class="mi"><div class="ml">Realizado</div><div class="mv2" style="color:var(--green)">'+fmtK(realizado)+'</div></div>'+
-      '<div class="mi"><div class="ml">Falta</div><div class="mv2" style="color:var(--red)">'+fmtK(falta)+'</div></div>'+
+      '<div class="mi"><div class="ml">Falta</div><div class="mv2" style="color:var(--red)">'+fmtK(faltaV)+'</div></div>'+
       '</div>'+
       '<div class="mpct" style="color:'+(p>=1?'var(--green)':p>=0.5?'var(--blue)':p>=0.25?'var(--amber)':'var(--red)')+'">'+pctFmt(p)+'</div>'+
       '<div class="po" style="height:12px;border-radius:6px"><div class="pi" style="width:'+pw+'%;background:linear-gradient(90deg,'+(p>=0.8?'#10b981,#059669':p>=0.5?'#3b82f6,#1d4ed8':'#ef4444,#f97316')+')"></div></div>'+
@@ -646,111 +988,184 @@ function buildMetas(){
       '</div>';
   }
 
-  html('metas-cards',
-    metaCard('Entrada Financiamento Casa','Médio','mb-m', md['Entrada Financiamento Casa'].realizado, md['Entrada Financiamento Casa'].meta)+
-    metaCard('Reserva de Emergência','Curto','mb-c', md['Reserva de emergência'].realizado, md['Reserva de emergência'].meta)
-  );
+  var PRAZO_CLS={'Curto':'mb-c','Médio':'mb-m','Longo':'mb-l'};
+  function realizadoDe(cat){
+    if(cat==='Reserva de emergência')return reservaVal;
+    if(cat==='Imóvel residencial')return imovelPat;
+    return real[cat]||0;
+  }
+  var metaCats=Object.keys(metas).filter(function(c){return metas[c]>0;});
+  var cardsHtml='';
+  metaCats.forEach(function(cat){
+    var rotulo=PRAZO_CLS[cat]?('Meta '+cat+' Prazo'):('Meta · '+cat);
+    cardsHtml+=metaCard(cat,rotulo,cat,PRAZO_CLS[cat]||'mb-m',realizadoDe(cat),metas[cat]);
+  });
+  html('metas-cards', cardsHtml||'<div style="color:var(--text3);font-size:12px;padding:14px">Nenhuma meta cadastrada na planilha.</div>');
 
-  var mEl=el('ch-metas');
-  if(mEl){
-    charts.metas=new Chart(mEl,{type:'bar',
-      data:{labels:['Entrada Financiamento Casa','Reserva de Emergência'],datasets:[
-        {label:'Meta',data:[md['Entrada Financiamento Casa'].meta, md['Reserva de emergência'].meta],backgroundColor:'rgba(99,102,241,.3)',borderColor:'#6366f1',borderWidth:1,borderRadius:4},
-        {label:'Realizado',data:[md['Entrada Financiamento Casa'].realizado, md['Reserva de emergência'].realizado],backgroundColor:'rgba(16,185,129,.7)',borderColor:'#10b981',borderWidth:1,borderRadius:4}
-      ]},
-      options:{responsive:true,maintainAspectRatio:false,
+  // bar chart metas
+  var metaVals=metaCats.map(function(c){return metas[c]||0;});
+  var realVals=metaCats.map(function(c){return realizadoDe(c);});
+  if(charts.metas){
+    charts.metas.data.labels=metaCats;
+    charts.metas.data.datasets[0].data=metaVals;
+    charts.metas.data.datasets[1].data=realVals;
+    charts.metas.update();
+  }else{
+    var mEl=el('ch-metas');
+    if(mEl){
+      charts.metas=new Chart(mEl,{type:'bar',data:{labels:metaCats,datasets:[
+        {label:'Meta',data:metaVals,backgroundColor:'rgba(99,102,241,.3)',borderColor:'#6366f1',borderWidth:1,borderRadius:4},
+        {label:'Realizado',data:realVals,backgroundColor:'rgba(16,185,129,.7)',borderColor:'#10b981',borderWidth:1,borderRadius:4}
+      ]},options:{responsive:true,maintainAspectRatio:false,
         scales:{x:{grid:{color:'#1e2d4a'}},y:{grid:{color:'#1e2d4a'},ticks:{callback:function(v){return 'R$'+Math.round(v/1000)+'k';}}}},
         plugins:{legend:{position:'top',labels:{boxWidth:9,padding:10,font:{size:10}}},tooltip:{backgroundColor:'#0d1526',borderColor:'#1e2d4a',borderWidth:1,padding:9,callbacks:{label:function(ctx){return ctx.dataset.label+': '+fmt(ctx.raw);}}}}
-      }
-    });
+      }});
+    }
+  }
+
+  // trend chart — realizados por mês
+  var tLabels=MONTHS.map(function(m){return m.substring(0,3);});
+  var tCurto=MONTHS.map(function(m){return DATA.realizados[m]['Curto']||0;});
+  var tMedio=MONTHS.map(function(m){return DATA.realizados[m]['Médio']||0;});
+  var tLongo=MONTHS.map(function(m){return DATA.realizados[m]['Longo']||0;});
+  if(charts.metaTrend){
+    charts.metaTrend.data.datasets[0].data=tCurto;
+    charts.metaTrend.data.datasets[1].data=tMedio;
+    charts.metaTrend.data.datasets[2].data=tLongo;
+    charts.metaTrend.update();
+  }else{
+    var mtEl=el('ch-metas-trend');
+    if(mtEl){
+      charts.metaTrend=new Chart(mtEl,{type:'bar',data:{labels:tLabels,datasets:[
+        {label:'Curto',data:tCurto,backgroundColor:'rgba(6,182,212,.65)',borderColor:'#06b6d4',borderWidth:1,borderRadius:3},
+        {label:'Médio',data:tMedio,backgroundColor:'rgba(59,130,246,.65)',borderColor:'#3b82f6',borderWidth:1,borderRadius:3},
+        {label:'Longo',data:tLongo,backgroundColor:'rgba(139,92,246,.65)',borderColor:'#8b5cf6',borderWidth:1,borderRadius:3}
+      ]},options:{responsive:true,maintainAspectRatio:false,
+        scales:{x:{grid:{color:'#1e2d4a'},stacked:true},y:{grid:{color:'#1e2d4a'},stacked:true,ticks:{callback:function(v){return 'R$'+Math.round(v/1000)+'k';}}}},
+        plugins:{legend:{position:'top',labels:{boxWidth:9,padding:10,font:{size:10}}},tooltip:{backgroundColor:'#0d1526',borderColor:'#1e2d4a',borderWidth:1,padding:9,callbacks:{label:function(ctx){return ' '+ctx.dataset.label+': '+fmt(ctx.raw);}}}}
+      }});
+    }
   }
 }
 
-// ── DRILL-DOWN ────────────────────────────────────────────────────────────────
-function openModal(dotColor,title,subtitle,items,isPat){
+// ══ DRILL-DOWN ════════════════════════════════════════════════════════════════
+function openModal(dotColor,title,subtitle,items,isPatrimonial){
   el('mdot').style.background=dotColor;
-  el('mttl').textContent=title;
-  el('msub').textContent=subtitle;
+  txt('mttl',title);
+  txt('msub',subtitle);
+
+  // build items
   var container=el('dd-items');container.innerHTML='';
 
-  function addHdr(lbl,col){var h=document.createElement('div');h.className='ddgrp';h.style.color=col;h.textContent=lbl;container.appendChild(h);}
+  function addHeader(lbl,col){
+    var h=document.createElement('div');h.className='ddgrp';h.style.color=col;h.textContent=lbl;container.appendChild(h);
+  }
   var maxAbs=Math.max.apply(null,items.map(function(i){return Math.abs(i.valor);}));
 
-  if(isPat){
+  if(isPatrimonial){
     var pos=items.filter(function(i){return i.valor>0;}).sort(function(a,b){return b.valor-a.valor;});
     var neg=items.filter(function(i){return i.valor<0;}).sort(function(a,b){return a.valor-b.valor;});
-    if(pos.length){addHdr('Ativos','#10b981');pos.forEach(function(it,i){container.appendChild(makeDDItem(it,i,maxAbs,true));});}
-    if(neg.length){addHdr('Passivos','#ef4444');neg.forEach(function(it,i){container.appendChild(makeDDItem(it,i,maxAbs,false));});}
-    buildDDChart(pos.concat(neg),dotColor,true);
-    el('dd-cw').style.height=Math.max(150,(pos.length+neg.length)*40)+'px';
+    if(pos.length){addHeader('Ativos','#10b981');pos.forEach(function(it,i){container.appendChild(makeDDItem(it,i,maxAbs,true));});}
+    if(neg.length){addHeader('Passivos','#ef4444');neg.forEach(function(it,i){container.appendChild(makeDDItem(it,i,maxAbs,false));});}
+    var allSorted=pos.concat(neg);
+    buildDDChart(allSorted,dotColor,true);
+    el('dd-cw').style.height=Math.max(150,allSorted.length*40)+'px';
   }else{
     var sorted=items.slice().sort(function(a,b){return a.valor-b.valor;});
-    var tot=sorted.reduce(function(s,i){return s+Math.abs(i.valor);},0);
-    sorted.forEach(function(it,i){container.appendChild(makeDDItem(it,i,maxAbs,false,(Math.abs(it.valor)/tot*100).toFixed(1)+'% da cat.'));});
+    var total=items.reduce(function(s,i){return s+Math.abs(i.valor);},0);
+    sorted.forEach(function(it,i){
+      var pctC=(Math.abs(it.valor)/total*100).toFixed(1);
+      container.appendChild(makeDDItem(it,i,maxAbs,false,pctC+'% da categoria'));
+    });
     buildDDChart(sorted,dotColor,false);
     el('dd-cw').style.height=Math.max(150,sorted.length*34)+'px';
   }
-  el('modal').classList.add('open');document.body.style.overflow='hidden';
+
+  el('modal').classList.add('open');
+  document.body.style.overflow='hidden';
 }
 
 function makeDDItem(item,idx,maxAbs,isAsset,extra){
   var bw=(Math.abs(item.valor)/maxAbs*100).toFixed(1);
-  var col=item.valor>0?'#10b981':'#ef4444';
+  var col=isAsset!==undefined?(item.valor>0?'#10b981':'#ef4444'):'#ef4444';
   var vCol=item.valor>0?'var(--green)':'var(--red)';
   var div=document.createElement('div');div.className='ddit';
   div.innerHTML='<div class="ddrk">'+(idx+1)+'</div>'
-    +'<div class="ddds">'+(item.desc||'—')+'</div>'
+    +'<div class="ddds">'+(item.desc||item.tipo||'—')+'</div>'
     +'<div class="ddrt"><div class="ddv" style="color:'+vCol+'">'+fmt(item.valor)+'</div>'
     +'<div class="ddbw"><div class="ddb" style="width:'+bw+'%;background:'+col+'"></div></div>'
-    +(extra?'<div class="ddp">'+extra+'</div>':'')+'</div>';
+    +(extra?'<div class="ddp">'+extra+'</div>':'')
+    +'</div>';
   return div;
 }
 
-function buildDDChart(items,color,isPat){
+function buildDDChart(items,color,isPatrimonial){
   if(ddChart){try{ddChart.destroy();}catch(e){}}
   var ctx=el('ch-dd');if(!ctx)return;
-  ddChart=new Chart(ctx,{type:'bar',
-    data:{labels:items.map(function(i){return i.desc||'—';}),datasets:[{
-      data:items.map(function(i){return Math.abs(i.valor);}),
-      backgroundColor:isPat?items.map(function(i){return i.valor>0?'rgba(16,185,129,.7)':'rgba(239,68,68,.65)';})
-        :items.map(function(i,idx){var r=parseInt(color.slice(1,3),16),g2=parseInt(color.slice(3,5),16),b=parseInt(color.slice(5,7),16);return 'rgba('+r+','+g2+','+b+','+(Math.max(0.3,1-idx*0.06))+')';}),
-      borderColor:isPat?items.map(function(i){return i.valor>0?'#10b981':'#ef4444';}):items.map(function(){return color;}),
-      borderWidth:1,borderRadius:4,borderSkipped:false
-    }]},
-    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
-      scales:{x:{grid:{color:'#1e2d4a'},ticks:{callback:function(v){return 'R$'+Math.round(v/1000)+'k';},font:{size:9}}},y:{grid:{display:false},ticks:{font:{size:10}}}},
-      plugins:{legend:{display:false},tooltip:{backgroundColor:'#0d1526',borderColor:'#1e2d4a',borderWidth:1,padding:9,callbacks:{label:function(ctx2){return ' '+fmt(items[ctx2.dataIndex].valor);}}}}
-    }
-  });
+  var bgColors=isPatrimonial?items.map(function(i){return i.valor>0?'rgba(16,185,129,.7)':'rgba(239,68,68,.65)';}):
+    items.map(function(i,idx){var r=parseInt(color.slice(1,3),16),g2=parseInt(color.slice(3,5),16),b=parseInt(color.slice(5,7),16);return 'rgba('+r+','+g2+','+b+','+(Math.max(0.3,1-idx*0.06))+')';});
+  var borderColors=isPatrimonial?items.map(function(i){return i.valor>0?'#10b981':'#ef4444';}):items.map(function(){return color;});
+  ddChart=new Chart(ctx,{type:'bar',data:{labels:items.map(function(i){return i.desc||i.tipo||'—';}),datasets:[{
+    data:items.map(function(i){return Math.abs(i.valor);}),
+    backgroundColor:bgColors,borderColor:borderColors,borderWidth:1,borderRadius:4,borderSkipped:false
+  }]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+    scales:{x:{grid:{color:'#1e2d4a'},ticks:{callback:function(v){return 'R$'+Math.round(v/1000)+'k';},font:{size:9}}},y:{grid:{display:false},ticks:{font:{size:10}}}},
+    plugins:{legend:{display:false},tooltip:{backgroundColor:'#0d1526',borderColor:'#1e2d4a',borderWidth:1,padding:9,callbacks:{label:function(ctx2){return ' '+fmt(items[ctx2.dataIndex].valor);}}}}
+  }});
 }
 
-function openDrillFlow(cat){
-  var items=(fd.cats[cat]&&fd.cats[cat].items)||[];
-  var tot=items.reduce(function(s,i){return s+Math.abs(i.valor);},0);
-  openModal(CC[cat]||'#64748b',cat,'Total: '+fmt(tot),items,false);
+function openDrillFlow(cat,month){
+  // aggregate items for selected month or all
+  var items=[];
+  var months=(month==='Todos')?MONTHS:[month];
+  var aggregated={};
+  months.forEach(function(m){
+    var fd=DATA.flow[m];
+    if(!fd||!fd.cats[cat])return;
+    (fd.cats[cat].items||[]).forEach(function(item){
+      if(!aggregated[item.desc]) aggregated[item.desc]={desc:item.desc,valor:0};
+      aggregated[item.desc].valor=Math.round((aggregated[item.desc].valor+item.valor)*100)/100;
+    });
+  });
+  items=Object.values(aggregated).sort(function(a,b){return a.valor-b.valor;});
+  var total=items.reduce(function(s,i){return s+Math.abs(i.valor);},0);
+  var sub='Total: '+fmt(total);
+  if(month!=='Todos') sub+=' · '+month;
+  openModal(CAT_COLORS[cat]||'#64748b',cat,sub,items,false);
 }
+
 function openDrillBal(cat,col,catData){
   var items=catData.items||[];
-  var sub='Ativos: '+fmt(catData.ativos)+(catData.passivos?' · Passivos: '+fmt(catData.passivos):'')+' → '+fmt(catData.ativos+catData.passivos);
+  if(!items.length) items=[{desc:'(sem detalhes)',valor:catData.ativos+catData.passivos}];
+  var sub='Ativos: '+fmt(catData.ativos)+(catData.passivos?' · Passivos: '+fmt(catData.passivos):'')+'  →  '+fmt(catData.ativos+catData.passivos);
   openModal(col,cat,sub,items,true);
 }
+
 function closeModal(){el('modal').classList.remove('open');document.body.style.overflow='';}
-el('mcls').addEventListener('click',closeModal);
-el('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
-var startY=0;
-document.querySelector('.mb3').addEventListener('touchstart',function(e){startY=e.touches[0].clientY;},{passive:true});
-document.querySelector('.mb3').addEventListener('touchend',function(e){if(e.changedTouches[0].clientY-startY>60)closeModal();},{passive:true});
+function initModal(){
+  el('mcls').addEventListener('click',closeModal);
+  el('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+  var startY=0,box=document.querySelector('.mb3');
+  box.addEventListener('touchstart',function(e){startY=e.touches[0].clientY;},{passive:true});
+  box.addEventListener('touchend',function(e){if(e.changedTouches[0].clientY-startY>60)closeModal();},{passive:true});
+}
 
 // ── RESIZE ────────────────────────────────────────────────────────────────────
-window.addEventListener('resize',function(){setTimeout(function(){Object.values(Chart.instances).forEach(function(c){try{c.resize();}catch(e){}});},200);});
-window.addEventListener('orientationchange',function(){setTimeout(function(){Object.values(Chart.instances).forEach(function(c){try{c.resize();}catch(e){}});},400);});
+function resizeCharts(){Object.values(Chart.instances).forEach(function(c){try{c.resize();}catch(e){}});}
+window.addEventListener('resize',function(){setTimeout(resizeCharts,200);});
+window.addEventListener('orientationchange',function(){setTimeout(resizeCharts,400);});
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
 Chart.defaults.color='#8ba3c7';
 Chart.defaults.font.family='Segoe UI,Helvetica Neue,Arial,sans-serif';
 Chart.defaults.font.size=11;
 
-function init(){buildFluxo();buildBalanca();buildPerfil();buildMetas();}
+function init(){
+  initTabs();
+  initMonthFilter();
+  initModal();
+  updateAll();
+}
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(init,80);});}
 else{setTimeout(init,80);}
 
